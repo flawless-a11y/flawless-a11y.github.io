@@ -108,15 +108,11 @@
      DUAL-TINT WEBGL GRASS (hero-scoped)
      ========================================================= */
   function startField() {
-    const img = $("#heroImg");
     const r = reduce ? null : rain();
-    const play = () => { if (img) img.style.animationPlayState = "running"; r && r.play(); };
-    const pause = () => { if (img) img.style.animationPlayState = "paused"; r && r.pause(); };
-    if (reduce && img) img.style.animationPlayState = "paused";
-    return { play, pause };
+    return { play: () => { r && r.play(); }, pause: () => { r && r.pause(); } };
   }
 
-  /* binary "waterfall" rain over the hero (blue left, crimson right) */
+  /* binary "waterfall" rain over the hero (blue left, mint right) */
   function rain() {
     const cv = $("#rain"); if (!cv) return null;
     const ctx = cv.getContext("2d"); const host = cv.parentElement;
@@ -135,7 +131,7 @@
       const trail = 16;
       for (let i = 0; i < cols; i++) {
         const x = i * fs, head = drops[i], blue = i < cols / 2;
-        const c = blue ? "131,169,255" : "255,90,120";
+        const c = blue ? "13,153,255" : "153,250,244";
         for (let k = 0; k < trail; k++) {
           const yy = (head - k) * fs; if (yy < 0 || yy > h) continue;
           const a = k === 0 ? 1 : (1 - k / trail) * 0.55;
