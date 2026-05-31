@@ -12,27 +12,42 @@
 </head>
 <body>
 
+<canvas class="field" id="field" aria-hidden="true"></canvas>
+<div class="field-fade" aria-hidden="true"></div>
 <div class="noise" aria-hidden="true"></div>
 <div class="cursor" id="cur" aria-hidden="true"></div>
 <div class="cursor-dot" id="curDot" aria-hidden="true"></div>
 
 <!-- loader -->
 <div class="loader" id="loader" aria-hidden="true">
-  <div class="loader-word"><span>PRASHANT</span></div>
+  <div class="loader-mark" id="loaderMark">
+    <svg viewBox="0 0 48 52" width="56" height="60"><path d="M24 2 L44 13 L44 39 L24 50 L4 39 L4 13 Z" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M30 17 a10 10 0 1 0 0 18" fill="none" stroke="#fff" stroke-width="3"/></svg>
+  </div>
   <div class="loader-bar"><i id="loaderFill"></i></div>
   <div class="loader-pct" id="loaderPct">0%</div>
 </div>
 
-<!-- corner UI -->
-<div class="dot-corner tl" aria-hidden="true"></div>
-<div class="dot-corner tr" aria-hidden="true"></div>
-<a class="side-tab" href="#contact" data-cur="hover"><span>Let's talk</span></a>
+<!-- corner UI + side tab -->
+<div class="pulse-dot" aria-hidden="true"></div>
+<button class="gear" id="gear" aria-label="Settings" data-cur="hover">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+</button>
+<a class="side-tab" href="#contact" data-cur="hover"><span>Available for work</span></a>
+
+<!-- settings panel -->
+<div class="panel" id="panel" aria-hidden="true">
+  <div class="panel-row"><span>Theme</span><button class="tgl" id="tTheme" data-cur="hover"><i></i></button></div>
+  <div class="panel-row"><span>Motion / field</span><button class="tgl on" id="tMotion" data-cur="hover"><i></i></button></div>
+  <div class="panel-row"><span>Full screen</span><button class="tgl" id="tFull" data-cur="hover"><i></i></button></div>
+  <div class="panel-note">⌥ vanilla build · canvas field · no libraries</div>
+</div>
 
 <!-- NAV -->
 <header class="nav" id="nav">
   <a href="#top" class="logo" data-cur="hover"><b>Prashant</b>Chauhan<i class="status">● available</i></a>
   <nav class="menu">
     <a href="#work" data-cur="hover">Work</a>
+    <a href="#principles" data-cur="hover">Principles</a>
     <a href="#studio" data-cur="hover">The&nbsp;Engineer</a>
     <a href="#contact" data-cur="hover">Contact</a>
   </nav>
@@ -42,11 +57,10 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-glowdot" aria-hidden="true"></div>
   <p class="eyebrow rv" data-rv="fade"><span class="acc">BACKEND</span> SYSTEMS / BUILT AT SCALE</p>
   <h1 class="hero-type">
-    <span class="row"><span class="up">Prashant</span></span>
-    <span class="row"><span class="up"><span class="hl">Chauhan</span></span></span>
+    <span class="row"><span class="up x3d">Prashant</span></span>
+    <span class="row"><span class="up acc x3d">Chauhan</span></span>
   </h1>
   <p class="hero-lede rv" data-rv="up">Backend engineer crafting high-performance fintech systems — large-scale microservice decomposition and the <em>observability platforms</em> that keep them honest.</p>
   <div class="hero-cta rv" data-rv="up">
@@ -54,68 +68,55 @@
     <a class="pill magnetic" href="#work" data-cur="hover"><span>View the Work</span></a>
     <a class="pill ghost magnetic" href="#contact" data-cur="hover"><span>Get in touch</span></a>
   </div>
-  <a href="#work" class="hero-scroll" data-cur="hover" aria-label="scroll"><span></span></a>
 </section>
 
-<!-- MARQUEE -->
-<div class="strip" aria-hidden="true">
-  <div class="strip-track">
-    <span>Go</span><i>✳</i><span>Kafka</span><i>✳</i><span>AWS</span><i>✳</i><span>ClickHouse</span><i>✳</i><span>Langfuse</span><i>✳</i><span>Terraform</span><i>✳</i><span>Kubernetes</span><i>✳</i><span>Distributed Systems</span><i>✳</i>
-    <span>Go</span><i>✳</i><span>Kafka</span><i>✳</i><span>AWS</span><i>✳</i><span>ClickHouse</span><i>✳</i><span>Langfuse</span><i>✳</i><span>Terraform</span><i>✳</i><span>Kubernetes</span><i>✳</i><span>Distributed Systems</span><i>✳</i>
+<!-- PRINCIPLES (glass cards) -->
+<section class="principles" id="principles">
+  <div class="sec-head">
+    <span class="sec-tag rv" data-rv="fade">(01) — How I build</span>
+    <h2 class="sec-title rv" data-rv="up">Core <span class="acc">principles.</span></h2>
   </div>
-</div>
+  <div class="cards">
+    <article class="card rv" data-rv="up" data-cur="hover">
+      <span class="card-ghost">01</span>
+      <div class="card-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+      <h3>Built to last</h3>
+      <p>Observed, tested and engineered to survive production at scale — correctness and reliability over shortcuts.</p>
+    </article>
+    <article class="card rv" data-rv="up" data-cur="hover">
+      <span class="card-ghost">02</span>
+      <div class="card-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></div>
+      <h3>Ship &amp; learn</h3>
+      <p>Move fast to learn, then harden the version that lasts. Spikes inform the system; the system survives the spike.</p>
+    </article>
+    <article class="card rv" data-rv="up" data-cur="hover">
+      <span class="card-ghost">03</span>
+      <div class="card-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div>
+      <h3>Own the outcome</h3>
+      <p>End-to-end ownership — from tech spec and design to rollout and on-call. The work isn't done until it's running.</p>
+    </article>
+  </div>
+</section>
 
 <!-- WORK -->
 <section class="work" id="work">
   <div class="sec-head">
-    <span class="sec-tag rv" data-rv="fade">(01) — Selected work</span>
+    <span class="sec-tag rv" data-rv="fade">(02) — Selected work</span>
     <h2 class="sec-title rv" data-rv="up">Things I've<br/>shipped.</h2>
   </div>
-
   <div class="list">
-    <a class="item" data-cur="open" href="#contact">
-      <span class="item-no">01</span>
-      <span class="item-title">LLM Observability Platform</span>
-      <span class="item-meta">Owner · Live in prod</span>
-      <span class="item-tags">Langfuse · ClickHouse · AWS</span>
-      <span class="item-arrow">↗</span>
-    </a>
-    <a class="item" data-cur="open" href="#contact">
-      <span class="item-no">02</span>
-      <span class="item-title">TDS for Business Banking</span>
-      <span class="item-meta">End-to-end · 8 repos</span>
-      <span class="item-tags">Go · Kong · Terraform</span>
-      <span class="item-arrow">↗</span>
-    </a>
-    <a class="item" data-cur="open" href="#contact">
-      <span class="item-no">03</span>
-      <span class="item-title">Account-Statements Decomp</span>
-      <span class="item-meta">37M+ records · zero downtime</span>
-      <span class="item-tags">Go · MySQL · Elasticsearch</span>
-      <span class="item-arrow">↗</span>
-    </a>
-    <a class="item" data-cur="open" href="#contact">
-      <span class="item-no">04</span>
-      <span class="item-title">Reconciliation Overhaul</span>
-      <span class="item-meta">20% → 90% recon rate</span>
-      <span class="item-tags">Reporting · facts-table</span>
-      <span class="item-arrow">↗</span>
-    </a>
-    <a class="item" data-cur="open" href="#contact">
-      <span class="item-no">05</span>
-      <span class="item-title">Polyglot PII Redaction SDK</span>
-      <span class="item-meta">5 languages · Presidio</span>
-      <span class="item-tags">Go · Python · TS · Ruby · Java</span>
-      <span class="item-arrow">↗</span>
-    </a>
+    <a class="item" data-cur="open" href="#contact"><span class="item-no">01</span><span class="item-title">LLM Observability Platform</span><span class="item-meta">Owner · Live in prod</span><span class="item-tags">Langfuse · ClickHouse · AWS</span><span class="item-arrow">↗</span></a>
+    <a class="item" data-cur="open" href="#contact"><span class="item-no">02</span><span class="item-title">TDS for Business Banking</span><span class="item-meta">End-to-end · 8 repos</span><span class="item-tags">Go · Kong · Terraform</span><span class="item-arrow">↗</span></a>
+    <a class="item" data-cur="open" href="#contact"><span class="item-no">03</span><span class="item-title">Account-Statements Decomp</span><span class="item-meta">37M+ records · zero downtime</span><span class="item-tags">Go · MySQL · Elasticsearch</span><span class="item-arrow">↗</span></a>
+    <a class="item" data-cur="open" href="#contact"><span class="item-no">04</span><span class="item-title">Reconciliation Overhaul</span><span class="item-meta">20% → 90% recon rate</span><span class="item-tags">Reporting · facts-table</span><span class="item-arrow">↗</span></a>
+    <a class="item" data-cur="open" href="#contact"><span class="item-no">05</span><span class="item-title">Polyglot PII Redaction SDK</span><span class="item-meta">5 languages · Presidio</span><span class="item-tags">Go · Python · TS · Ruby · Java</span><span class="item-arrow">↗</span></a>
   </div>
 </section>
 
 <!-- STUDIO / ABOUT -->
 <section class="studio" id="studio">
-  <span class="sec-tag rv" data-rv="fade">(02) — The engineer</span>
-  <p class="studio-statement rv" data-rv="up">I build the <span class="hl2">machinery</span> behind fintech at scale — migrations, reconciliations and platform work where correctness and reliability are non-negotiable. Currently at <em>Razorpay</em>; previously <em>Paytm Payments Bank</em>.</p>
-
+  <span class="sec-tag rv" data-rv="fade">(03) — The engineer</span>
+  <p class="studio-statement rv" data-rv="up">I build the <span class="acc">machinery</span> behind fintech at scale — migrations, reconciliations and platform work where correctness is non-negotiable. Currently at <em>Razorpay</em>; previously <em>Paytm Payments Bank</em>.</p>
   <div class="stats">
     <div class="stat rv" data-rv="up"><b><span class="count" data-to="37" data-suf="M+">0</span></b><span>records migrated, zero downtime</span></div>
     <div class="stat rv" data-rv="up"><b><span class="count" data-to="99.9" data-dec="1" data-suf="%">0</span></b><span>platform uptime</span></div>
@@ -126,15 +127,14 @@
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <span class="sec-tag rv" data-rv="fade">(03) — Contact</span>
-  <h2 class="contact-type">Let's build<br/>something <span class="hl">fast.</span></h2>
+  <span class="sec-tag rv" data-rv="fade">(04) — Contact</span>
+  <h2 class="contact-type">Let's build<br/>something <span class="acc x3d">fast.</span></h2>
   <div class="contact-links rv" data-rv="up">
     <a class="pill magnetic" href="mailto:chnpr2318@gmail.com" data-cur="hover"><span>chnpr2318@gmail.com</span></a>
     <a class="pill ghost magnetic" href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener" data-cur="hover"><span>LinkedIn ↗</span></a>
     <a class="pill ghost magnetic" href="https://github.com/pacifich" target="_blank" rel="noopener" data-cur="hover"><span>GitHub ↗</span></a>
   </div>
 </section>
-
 </main>
 
 <footer class="foot">
@@ -142,6 +142,15 @@
   <span class="foot-mid">Bengaluru, IN</span>
   <a href="#top" data-cur="hover">Back to top ↑</a>
 </footer>
+
+<!-- floating dock -->
+<nav class="dock" id="dock" aria-label="Quick nav">
+  <a href="#top" class="dock-i" data-tip="Home" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-8 9 8M5 9.5V21h14V9.5"/></svg></a>
+  <a href="#work" class="dock-i" data-tip="Work" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></a>
+  <a href="#top" class="dock-i dock-logo" data-tip="Prashant Chauhan" data-cur="hover"><svg viewBox="0 0 48 52" width="22" height="24"><path d="M24 2 L44 13 L44 39 L24 50 L4 39 L4 13 Z" fill="none" stroke="var(--accent)" stroke-width="3"/><path d="M30 17 a10 10 0 1 0 0 18" fill="none" stroke="#fff" stroke-width="4"/></svg></a>
+  <a href="#principles" class="dock-i" data-tip="Principles" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></a>
+  <a href="#contact" class="dock-i" data-tip="Contact" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></a>
+</nav>
 
 <script src="studio.js"></script>
 </body>
