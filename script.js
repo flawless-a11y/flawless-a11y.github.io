@@ -62,7 +62,7 @@
      PRELOADER
      ========================================================= */
   const pre = $("#preloader");
-  const boot = () => { document.body.classList.add("loaded"); splitChars(); revealObserver(); counterObserver(); gaugeObserver(); scrambleObserver(); };
+  const boot = () => { document.body.classList.add("loaded"); splitChars(); revealObserver(); counterObserver(); gaugeObserver(); scrambleObserver(); approachFX(); };
   if (pre && !reduce) {
     const countEl = $("#preCount"), fill = $("#preLineFill");
     let n = 0;
@@ -110,7 +110,7 @@
   const workPin = $("#workPin"), workTrack = $("#workTrack"), workProg = $("#workProg");
   const accents = {
     hero:["rgba(47,93,255,.16)","72%"], performance:["rgba(47,93,255,.14)","30%"],
-    engineer:["rgba(201,167,105,.10)","82%"], work:["rgba(47,93,255,.18)","50%"],
+    engineer:["rgba(201,167,105,.10)","82%"], approach:["rgba(47,93,255,.18)","50%"], work:["rgba(47,93,255,.18)","50%"],
     trajectory:["rgba(110,180,205,.10)","22%"], capabilities:["rgba(201,167,105,.10)","70%"],
     contact:["rgba(47,93,255,.20)","50%"],
   };
@@ -283,6 +283,27 @@
     const phrases = ["LLM observability at scale", "zero-downtime migrations", "payments & tax compliance", "reconciliation, done right"];
     let i = 0;
     setInterval(() => { i = (i + 1) % phrases.length; scramble(rot, phrases[i], 800); }, 3000);
+  }
+
+  /* =========================================================
+     THE APPROACH — reveal + scan + terminal typewriter
+     ========================================================= */
+  function approachFX() {
+    const sec = $("#approach"); if (!sec) return;
+    const img = $("#approachImg"); if (img) img.onerror = () => img.classList.add("missing");
+    if (reduce) sec.classList.add("live");
+    else new IntersectionObserver(es => es.forEach(e => sec.classList.toggle("live", e.isIntersecting)), { threshold: 0.25 }).observe(sec);
+    const el = $("#approachType"); if (!el) return;
+    const lines = ["assess(problem) — scale, blast-radius, SLAs", "prototype()  // move fast, learn fast", "harden() · test() · observe()", "ship(production)  // built to last"];
+    if (reduce) { el.textContent = lines[lines.length - 1]; return; }
+    let li = 0, ci = 0, del = false;
+    (function type() {
+      const cur = lines[li];
+      el.textContent = cur.slice(0, ci);
+      if (!del) { ci++; if (ci > cur.length) { del = true; return setTimeout(type, 1500); } }
+      else { ci--; if (ci < 0) { del = false; ci = 0; li = (li + 1) % lines.length; } }
+      setTimeout(type, del ? 26 : 46);
+    })();
   }
 
   /* =========================================================

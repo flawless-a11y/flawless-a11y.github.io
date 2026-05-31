@@ -239,6 +239,39 @@ main{ position:relative; z-index:1; }
 .focus-list li span{ font-family:var(--mono); font-size:.7rem; color:var(--gold); }
 .focus-list li:hover{ padding-left:1rem; color:var(--blue-2); }
 
+/* ---------- THE APPROACH (cinematic image + HUD) ---------- */
+.approach{ position:relative; min-height:100svh; display:grid; place-items:center; overflow:hidden; background:#05060a; padding:clamp(5rem,12vh,9rem) var(--pad); z-index:1; }
+.approach-media{ position:absolute; inset:0; z-index:0; }
+.approach-fallback{ position:absolute; inset:0; background:radial-gradient(48% 70% at 17% 46%, rgba(47,93,255,.22), transparent 60%), radial-gradient(48% 70% at 83% 42%, rgba(255,110,46,.18), transparent 60%), #05060a; }
+.approach-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; clip-path:inset(0 0 100% 0); filter:contrast(1.06) brightness(.9) saturate(1.05); transition:opacity 1.2s var(--ease), clip-path 1.5s var(--ease-2); }
+.approach.live .approach-img{ opacity:.95; clip-path:inset(0 0 0 0); animation:kb 20s ease-in-out infinite alternate; }
+.approach-img.missing{ display:none; }
+@keyframes kb{ from{ transform:scale(1);} to{ transform:scale(1.08);} }
+.approach-media::after{ content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(47,93,255,.14), transparent 26%, transparent 74%, rgba(255,110,40,.14)), radial-gradient(58% 82% at 50% 50%, rgba(5,6,10,.86), rgba(5,6,10,.30) 72%); }
+.approach-scanlines{ position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.22; mix-blend-mode:overlay; background:repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.6) 3px 3px); }
+.approach-grid{ position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.10; background-image:linear-gradient(var(--blue-2) 1px,transparent 1px),linear-gradient(90deg,var(--blue-2) 1px,transparent 1px); background-size:60px 60px; mask-image:radial-gradient(80% 80% at 50% 50%, #000, transparent 75%); }
+.approach-scan{ position:absolute; left:0; right:0; top:0; height:2px; z-index:2; opacity:0; pointer-events:none; background:linear-gradient(90deg, transparent, var(--blue-2), transparent); box-shadow:0 0 22px var(--blue-2); }
+.approach.live .approach-scan{ animation:scan 3.4s var(--ease) infinite; }
+@keyframes scan{ 0%{ top:0; opacity:0;} 8%{ opacity:.9;} 92%{ opacity:.9;} 100%{ top:100%; opacity:0;} }
+.hud{ position:absolute; z-index:3; font-family:var(--mono); display:flex; flex-direction:column; gap:.25rem; }
+.hud-left{ left:clamp(1rem,5vw,5rem); top:30%; padding-left:.9rem; border-left:2px solid var(--blue-2); }
+.hud-right{ right:clamp(1rem,5vw,5rem); top:23%; padding-right:.9rem; border-right:2px solid #ff7a3c; text-align:right; align-items:flex-end; }
+.hud-tag{ font-size:.6rem; letter-spacing:.22em; color:var(--gold); }
+.hud-val{ font-family:var(--serif); font-size:clamp(1.1rem,2.4vw,1.8rem); color:var(--ink); }
+.hud-left .hud-val{ text-shadow:0 0 18px rgba(47,93,255,.55); }
+.hud-right .hud-val{ text-shadow:0 0 18px rgba(255,110,40,.5); }
+.hud-sub{ font-size:.62rem; letter-spacing:.1em; color:var(--muted); }
+.approach-core{ position:relative; z-index:4; text-align:center; max-width:680px; }
+.approach-label{ font-family:var(--mono); font-size:.7rem; letter-spacing:.3em; color:var(--gold); }
+.approach-title{ font-family:var(--serif); font-weight:400; line-height:.98; font-size:clamp(2.4rem,7vw,5.4rem); margin:1rem 0 1.4rem; }
+.approach-title em{ color:transparent; -webkit-text-stroke:1px var(--blue-2); }
+.approach-term{ display:inline-flex; align-items:center; gap:.2rem; font-family:var(--mono); font-size:clamp(.72rem,1.4vw,.9rem); color:var(--blue-2); background:rgba(5,6,10,.6); border:1px solid var(--hair); border-radius:6px; padding:.7rem 1.1rem; backdrop-filter:blur(4px); min-height:2.7em; max-width:90vw; }
+.term-prompt{ color:var(--gold); }
+.term-cursor{ animation:blink 1s steps(1) infinite; color:var(--blue-2); }
+@keyframes blink{ 50%{ opacity:0; } }
+.approach-copy{ margin:1.6rem auto 0; max-width:54ch; color:var(--muted); font-size:clamp(1rem,1.4vw,1.14rem); }
+@media (max-width:720px){ .hud{ display:none; } .approach-media::after{ background:radial-gradient(72% 82% at 50% 50%, rgba(5,6,10,.9), rgba(5,6,10,.55)); } }
+
 /* ---------- WORK · horizontal pinned gallery ---------- */
 .work{ position:relative; z-index:1; }
 .work-head{ padding:clamp(5rem,11vh,11rem) var(--pad) clamp(2rem,4vh,3rem); }

@@ -52,6 +52,7 @@ To stop the server: `Ctrl-C` in the terminal running it.
 - **Accessibility:** respects `prefers-reduced-motion` (disables motion, shows content) and falls back to a normal cursor on touch devices.
 - **Responsive:** fluid `clamp()` typography; grids collapse on tablet/mobile; a burger menu under 720px.
 - **Skill logos:** brand logos in the Capabilities section are monochrome SVGs from the [Simple Icons](https://simpleicons.org) CDN (tinted to the palette), injected in `script.js` from a slug map — with a graceful text-only fallback for any skill without a logo (so it never breaks).
+- **"The Approach" section** (`#approach`): a cinematic interstitial that overlays an HUD/scan treatment (sweeping scan line, CRT scanlines, targeting grid, blue/orange edge tints, lock-on labels, terminal typewriter) onto a duel image at **`assets/approach.jpg`**. Drop that file into `assets/` to enable it — a styled blue/orange gradient fallback shows until then (see `assets/README.txt`).
 
 ## Editing content
 
