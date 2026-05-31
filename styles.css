@@ -285,8 +285,10 @@ main{ position:relative; z-index:1; }
 .cap:hover{ background:var(--panel); }
 .cap h4{ font-family:var(--mono); font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1.6rem; }
 .cap-tags{ display:flex; flex-wrap:wrap; gap:.6rem; }
-.cap-tags span{ font-size:.86rem; color:var(--muted); border:1px solid var(--faint); border-radius:6px; padding:.5rem .9rem; transition:.35s var(--ease); }
+.cap-tags span{ display:inline-flex; align-items:center; gap:.5rem; font-size:.86rem; color:var(--muted); border:1px solid var(--faint); border-radius:6px; padding:.5rem .9rem; transition:.35s var(--ease); }
 .cap-tags span:hover{ color:var(--ink); border-color:var(--blue-2); background:var(--blue-deep); transform:translateY(-3px); }
+.cap-logo{ width:16px; height:16px; flex:0 0 auto; opacity:.82; transition:opacity .3s var(--ease), transform .3s var(--ease); }
+.cap-tags span:hover .cap-logo{ opacity:1; transform:scale(1.14); }
 
 /* ---------- contact ---------- */
 .contact{ text-align:center; overflow:hidden; padding-top:clamp(6rem,14vh,12rem); padding-bottom:0; }

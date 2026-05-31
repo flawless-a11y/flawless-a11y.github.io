@@ -17,6 +17,26 @@
   const mono = $("#preMono");
   if (mono) mono.innerHTML = [...mono.textContent].map(c => `<span>${c}</span>`).join("");
 
+  /* ---------- skill logos (Simple Icons CDN · monochrome · graceful fallback) ---------- */
+  (function skillLogos() {
+    const map = {
+      "Go": "go", "Java": "openjdk", "Python": "python", "TypeScript": "typescript", "Ruby": "ruby", "PHP": "php", "Scala": "scala",
+      "Spring Boot": "spring", "Kafka": "apachekafka", "PostgreSQL": "postgresql", "MySQL": "mysql",
+      "ClickHouse": "clickhouse", "Elasticsearch": "elasticsearch", "Redis": "redis", "Terraform": "terraform", "Helm": "helm",
+      "Spinnaker": "spinnaker", "Docker": "docker", "Kubernetes": "kubernetes", "Kong": "kong", "Airflow": "apacheairflow",
+      "OpenTelemetry": "opentelemetry", "Grafana": "grafana", "Prometheus": "prometheus",
+    };
+    $$(".cap-tags span").forEach(s => {
+      const slug = map[s.textContent.trim()];
+      if (!slug) return;
+      const img = new Image();
+      img.className = "cap-logo"; img.alt = ""; img.loading = "lazy"; img.decoding = "async";
+      img.src = `https://cdn.simpleicons.org/${slug}/83A9FF`;
+      img.onerror = () => img.remove();   // no logo for this slug → text only
+      s.prepend(img);
+    });
+  })();
+
   /* ---------- stagger indices ---------- */
   $$(".telemetry, .cap-grid, .focus-list").forEach(g => $$(".reveal", g).forEach((el, i) => el.style.setProperty("--i", i)));
   $$(".hero [data-reveal]").forEach((el, i) => el.style.setProperty("--i", i));

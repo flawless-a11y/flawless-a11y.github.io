@@ -51,6 +51,7 @@ To stop the server: `Ctrl-C` in the terminal running it.
   - All scroll-reveals **re-fire on scroll in *and* out** (IntersectionObserver toggling `.in-view`)
 - **Accessibility:** respects `prefers-reduced-motion` (disables motion, shows content) and falls back to a normal cursor on touch devices.
 - **Responsive:** fluid `clamp()` typography; grids collapse on tablet/mobile; a burger menu under 720px.
+- **Skill logos:** brand logos in the Capabilities section are monochrome SVGs from the [Simple Icons](https://simpleicons.org) CDN (tinted to the palette), injected in `script.js` from a slug map — with a graceful text-only fallback for any skill without a logo (so it never breaks).
 
 ## Editing content
 
