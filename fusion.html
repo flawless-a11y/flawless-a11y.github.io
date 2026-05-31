@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prashant Chauhan — Backend Engineer · Systems at Scale</title>
+<meta name="description" content="Prashant Chauhan — backend engineer. High-performance fintech systems, observability platforms, large-scale microservice decomposition." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="fusion.css" />
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor" id="cur" aria-hidden="true"></div>
+<div class="cursor-dot" id="curDot" aria-hidden="true"></div>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark" id="loaderMark">PC</div>
+  <div class="loader-bar"><i id="loaderFill"></i></div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
+
+<div class="pulse-dot" aria-hidden="true"></div>
+<button class="gear" id="gear" aria-label="Settings" data-cur="hover">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+</button>
+<a class="side-tab" href="#contact" data-cur="hover"><span>Available for work</span></a>
+<div class="panel" id="panel" aria-hidden="true">
+  <div class="panel-row"><span>Theme</span><button class="tgl" id="tTheme" data-cur="hover"><i></i></button></div>
+  <div class="panel-row"><span>Motion / field</span><button class="tgl on" id="tMotion" data-cur="hover"><i></i></button></div>
+  <div class="panel-row"><span>Full screen</span><button class="tgl" id="tFull" data-cur="hover"><i></i></button></div>
+  <div class="panel-note">⌥ fusion build · blue × crimson · webgl field</div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="logo" data-cur="hover"><b>Prashant</b>Chauhan<i class="status">● available</i></a>
+  <nav class="menu">
+    <a href="#work" data-cur="hover">Work</a>
+    <a href="#principles" data-cur="hover">Principles</a>
+    <a href="#telemetry" data-cur="hover">Telemetry</a>
+    <a href="#contact" data-cur="hover">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <video class="hero-video" id="heroVid" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/hero.mp4" type="video/mp4" /></video>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow rv" data-rv="fade"><span class="b">BACKEND</span> SYSTEMS <span class="sep">/</span> <span class="c">BUILT AT SCALE</span></p>
+    <h1 class="hero-type">
+      <span class="row"><span class="up x3d">Prashant</span></span>
+      <span class="row"><span class="up c x3d">Chauhan</span></span>
+    </h1>
+    <p class="hero-script rv" data-rv="up">— two engines, <em>one machine.</em></p>
+    <p class="hero-lede rv" data-rv="up">Backend engineer crafting high-performance fintech systems — large-scale microservice decomposition and the <em>observability platforms</em> that keep them honest.</p>
+    <div class="hero-cta rv" data-rv="up">
+      <a class="icon-btn magnetic" href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener" data-cur="hover" aria-label="LinkedIn">in</a>
+      <a class="pill magnetic" href="#work" data-cur="hover"><span>View the Work</span></a>
+      <a class="pill ghost magnetic" href="#contact" data-cur="hover"><span>Get in touch</span></a>
+    </div>
+  </div>
+  <a href="#work" class="scroll-cue" data-cur="hover"><span>SCROLL</span><i></i></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track" id="strip">
+    <span>Go</span><i>✦</i><span>Kafka</span><i>✦</i><span>AWS</span><i>✦</i><span>ClickHouse</span><i>✦</i><span>Langfuse</span><i>✦</i><span>Terraform</span><i>✦</i><span>Kubernetes</span><i>✦</i><span>gRPC</span><i>✦</i><span>Elasticsearch</span><i>✦</i>
+    <span>Go</span><i>✦</i><span>Kafka</span><i>✦</i><span>AWS</span><i>✦</i><span>ClickHouse</span><i>✦</i><span>Langfuse</span><i>✦</i><span>Terraform</span><i>✦</i><span>Kubernetes</span><i>✦</i><span>gRPC</span><i>✦</i><span>Elasticsearch</span><i>✦</i>
+  </div>
+</div>
+
+<!-- SIGNATURE BUILDS — horizontal pinned gallery (from index #work) -->
+<section class="work" id="work">
+  <div class="work-head">
+    <span class="sec-tag rv" data-rv="fade">(01) — Selected work</span>
+    <h2 class="sec-title rv" data-rv="up">Signature <span class="ser">builds.</span></h2>
+    <p class="sec-kicker rv" data-rv="up">Each one shipped, measured and running. <span class="hint">Scroll →</span></p>
+  </div>
+  <div class="work-pin" id="workPin">
+    <div class="work-sticky">
+      <div class="work-track" id="workTrack">
+        <article class="build" data-cur="hover">
+          <div class="build-no">MODEL 01</div>
+          <div class="build-tag b">Owner · Live in production</div>
+          <h3 class="build-title">Self-Hosted LLM<br/>Observability Platform</h3>
+          <p class="build-desc">Owned and shipped Razorpay's self-hosted <strong>Langfuse + ClickHouse</strong> platform — POC through architecture &amp; cost approvals to a full AWS&nbsp;EKS deployment.</p>
+          <div class="build-metrics"><span><b>~1/5</b> cost vs enterprise</span><span><b>6+</b> AI products</span></div>
+          <div class="build-tech">Langfuse · ClickHouse · AWS EKS · Terraform · Helm</div>
+        </article>
+        <article class="build" data-cur="hover">
+          <div class="build-no">MODEL 02</div>
+          <div class="build-tag c">End-to-end · 8 repos</div>
+          <h3 class="build-title">TDS for Business<br/>Banking Payouts</h3>
+          <p class="build-desc">Led design &amp; backend across <strong>eight services</strong> — tax-compliance, payouts, CFA, API, authz — plus Edge/Kong onboarding.</p>
+          <div class="build-metrics"><span><b>8</b> repos</span><span><b>spec → UAT</b></span></div>
+          <div class="build-tech">Go · gRPC · Kong · Terraform · vishnu</div>
+        </article>
+        <article class="build" data-cur="hover">
+          <div class="build-no">MODEL 03</div>
+          <div class="build-tag b">Core contributor</div>
+          <h3 class="build-title">Account-Statements<br/>Decomposition</h3>
+          <p class="build-desc">Pulled account statements out of the monolith into Go — <strong>37M+ records migrated, zero downtime</strong>, 100% traffic cutoff, read/write DB segregation.</p>
+          <div class="build-metrics"><span><b>37M+</b> records</span><span><b>0</b> downtime</span></div>
+          <div class="build-tech">Go · MySQL · Elasticsearch · Airflow</div>
+        </article>
+        <article class="build" data-cur="hover">
+          <div class="build-no">MODEL 04</div>
+          <div class="build-tag c">Reliability</div>
+          <h3 class="build-title">Reconciliation<br/>Overhaul</h3>
+          <p class="build-desc">Re-architected reconciliation across <strong>RBL, Yes Bank &amp; IDFC</strong> — lifting the recon rate from <strong>20% to 90%</strong>.</p>
+          <div class="build-metrics"><span><b>20→90%</b> recon</span><span><b>3</b> banks</span></div>
+          <div class="build-tech">Reporting · facts-table · PHP/Scala/Python</div>
+        </article>
+        <article class="build" data-cur="hover">
+          <div class="build-no">MODEL 05</div>
+          <div class="build-tag b">Internal SDK</div>
+          <h3 class="build-title">Polyglot PII<br/>Redaction SDK</h3>
+          <p class="build-desc">An internal PII masking SDK across <strong>five languages</strong> using Microsoft Presidio (NER + regex) — defense-in-depth for LLM traces.</p>
+          <div class="build-metrics"><span><b>5</b> languages</span><span><b>4</b> layers</span></div>
+          <div class="build-tech">Go · Python · TS · Ruby · Java · Presidio</div>
+        </article>
+        <a class="work-end" href="#contact" data-cur="hover"><span class="work-end-l">FULL DOSSIER</span><span class="work-end-t">Let's talk →</span></a>
+      </div>
+      <div class="work-rail" aria-hidden="true"><span id="workProg"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles" id="principles">
+  <div class="sec-head">
+    <span class="sec-tag rv" data-rv="fade">(02) — How I build</span>
+    <h2 class="sec-title rv" data-rv="up">Core <span class="ser">principles.</span></h2>
+  </div>
+  <div class="cards">
+    <article class="card rv" data-rv="up" data-cur="hover"><span class="card-ghost">01</span><div class="card-ic b"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div><h3>Built to last</h3><p>Observed, tested and engineered to survive production at scale — correctness over shortcuts.</p></article>
+    <article class="card rv" data-rv="up" data-cur="hover"><span class="card-ghost">02</span><div class="card-ic c"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></div><h3>Ship &amp; learn</h3><p>Move fast to learn, then harden the version that lasts. The spike informs the system.</p></article>
+    <article class="card rv" data-rv="up" data-cur="hover"><span class="card-ghost">03</span><div class="card-ic b"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Own the outcome</h3><p>End-to-end ownership — from tech spec to on-call. The work isn't done until it's running.</p></article>
+  </div>
+</section>
+
+<!-- TELEMETRY (gauge + counters) -->
+<section class="telemetry" id="telemetry">
+  <div class="sec-head">
+    <span class="sec-tag rv" data-rv="fade">(03) — Performance figures</span>
+    <h2 class="sec-title rv" data-rv="up">Measured in <span class="ser">production.</span></h2>
+  </div>
+  <div class="tele-wrap">
+    <div class="gauge-wrap rv" data-rv="up">
+      <svg class="gauge" viewBox="0 0 320 200" id="gauge">
+        <path class="gauge-track" d="M 30 180 A 130 130 0 0 1 290 180" />
+        <path class="gauge-fill" id="gaugeFill" d="M 30 180 A 130 130 0 0 1 290 180" />
+        <line class="gauge-needle" id="gaugeNeedle" x1="160" y1="180" x2="160" y2="70" />
+        <circle class="gauge-hub" cx="160" cy="180" r="7" />
+      </svg>
+      <div class="gauge-read"><span class="count" data-to="99.9" data-dec="1" data-suf="%">0.0%</span><i>platform uptime</i></div>
+    </div>
+    <div class="stats">
+      <div class="stat rv" data-rv="up"><b><span class="count" data-to="37" data-suf="M+">0</span></b><span>records migrated · zero downtime</span></div>
+      <div class="stat rv" data-rv="up"><b>20→<span class="count" data-to="90" data-suf="%">0</span></b><span>reconciliation rate</span></div>
+      <div class="stat rv" data-rv="up"><b><span class="count" data-to="8">0</span></b><span>repos · one delivery (TDS)</span></div>
+      <div class="stat rv" data-rv="up"><b><span class="count" data-to="5">0</span></b><span>languages · one SDK</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="sec-tag rv" data-rv="fade">(04) — Contact</span>
+  <h2 class="contact-type">Let's build<br/>something <span class="c x3d">fast.</span></h2>
+  <div class="contact-links rv" data-rv="up">
+    <a class="pill magnetic" href="mailto:chnpr2318@gmail.com" data-cur="hover"><span>chnpr2318@gmail.com</span></a>
+    <a class="pill ghost magnetic" href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener" data-cur="hover"><span>LinkedIn ↗</span></a>
+    <a class="pill ghost magnetic" href="https://github.com/pacifich" target="_blank" rel="noopener" data-cur="hover"><span>GitHub ↗</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>Prashant Chauhan © <span id="yr"></span></span>
+  <span class="foot-mid">Bengaluru, IN · Fusion edition</span>
+  <a href="#top" data-cur="hover">Back to top ↑</a>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Quick nav">
+  <a href="#top" class="dock-i" data-tip="Home" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-8 9 8M5 9.5V21h14V9.5"/></svg></a>
+  <a href="#work" class="dock-i" data-tip="Work" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></a>
+  <a href="#top" class="dock-i dock-logo" data-tip="Prashant Chauhan" data-cur="hover">PC</a>
+  <a href="#telemetry" class="dock-i" data-tip="Telemetry" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12a9 9 0 0 1 18 0"/><line x1="12" y1="12" x2="16" y2="9"/></svg></a>
+  <a href="#contact" class="dock-i" data-tip="Contact" data-cur="hover"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></a>
+</nav>
+
+<script src="fusion.js"></script>
+</body>
+</html>

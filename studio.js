@@ -10,7 +10,7 @@
   $("#yr") && ($("#yr").textContent = new Date().getFullYear());
 
   let fieldCtl = null;
-  const boot = () => { document.body.classList.add("ready"); $(".hero") && $(".hero").classList.add("in"); reveal(); counters(); if (!reduce) fieldCtl = field(); };
+  const boot = () => { document.body.classList.add("ready"); $(".hero") && $(".hero").classList.add("in"); reveal(); counters(); if (!reduce) fieldCtl = startField(); };
 
   /* loader */
   const loader = $("#loader");
@@ -87,8 +87,97 @@
   /* =========================================================
      CRIMSON FIELD  (lightweight 2D-canvas "fur/grass")
      ========================================================= */
-  function field() {
+  function startField() {
     const cv = $("#field"); if (!cv) return null;
+    if (window.THREE) { try { return grassWebGL(cv); } catch (e) { console.warn("grass webgl failed, using 2D", e); } }
+    return field(cv);
+  }
+
+  /* ---- WebGL instanced grass (three.js) ---- */
+  function grassWebGL(cv) {
+    const T = window.THREE;
+    const renderer = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, powerPreference: "high-performance" });
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.75));
+    const scene = new T.Scene();
+    scene.fog = new T.Fog(0x0a0a0b, 10, 36);
+    const camera = new T.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 140);
+    camera.position.set(0, 1.7, 9);
+    const look = new T.Vector3(0, 0.5, -12);
+
+    const blade = new T.PlaneGeometry(0.07, 1, 1, 5); blade.translate(0, 0.5, 0);
+    const uniforms = {
+      uTime: { value: 0 }, uBase: { value: new T.Color(0x2a0109) }, uTip: { value: new T.Color(0xdb1533) },
+      uLight: { value: new T.Vector3(1.5, 0, -8) }, uFog: { value: new T.Color(0x0a0a0b) }, uFogDensity: { value: 0.05 },
+    };
+    const mat = new T.ShaderMaterial({
+      uniforms, side: T.DoubleSide, fog: false,
+      vertexShader: `
+        uniform float uTime; varying float vH; varying vec3 vW;
+        void main(){
+          vH = uv.y; vec3 pos = position;
+          vec4 io = instanceMatrix * vec4(0.0,0.0,0.0,1.0);
+          float w = sin(uTime*1.4 + io.x*0.5 + io.z*0.6) + 0.5*sin(uTime*2.1 + io.z*1.1);
+          float bend = pow(uv.y, 2.0);
+          pos.x += w * bend * 0.5;
+          pos.z += cos(uTime*1.1 + io.x*0.4) * bend * 0.22;
+          vec4 world = modelMatrix * instanceMatrix * vec4(pos,1.0);
+          vW = world.xyz;
+          gl_Position = projectionMatrix * viewMatrix * world;
+        }`,
+      fragmentShader: `
+        precision highp float; varying float vH; varying vec3 vW;
+        uniform vec3 uBase, uTip, uLight, uFog; uniform float uFogDensity;
+        void main(){
+          vec3 col = mix(uBase, uTip, vH);
+          float d = distance(vW.xz, uLight.xz);
+          float lit = smoothstep(18.0, 0.0, d);
+          col *= 0.32 + lit*1.6;
+          col *= 0.4 + 0.6*vH;
+          float fd = length(vW - cameraPosition);
+          float f = 1.0 - exp(-uFogDensity*uFogDensity*fd*fd);
+          col = mix(col, uFog, clamp(f,0.0,1.0));
+          gl_FragColor = vec4(col, 1.0);
+        }`,
+    });
+    const COUNT = Math.min(42000, Math.floor(innerWidth * innerHeight / 24));
+    const mesh = new T.InstancedMesh(blade, mat, COUNT);
+    const d = new T.Object3D();
+    for (let i = 0; i < COUNT; i++) {
+      d.position.set((Math.random() - 0.5) * 46, 0, 6 - Math.random() * 44);
+      d.rotation.y = Math.random() * Math.PI;
+      d.scale.set(0.8 + Math.random() * 0.6, 0.7 + Math.random() * 1.4, 1);
+      d.updateMatrix(); mesh.setMatrixAt(i, d.matrix);
+    }
+    scene.add(mesh);
+
+    const cube = new T.Mesh(new T.BoxGeometry(1.25, 1.25, 1.25), new T.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55, metalness: 0.05 }));
+    cube.position.set(0, 2, -4.5); scene.add(cube);
+    const key = new T.PointLight(0xffffff, 1.3, 50); key.position.set(4, 7, 3); scene.add(key);
+    scene.add(new T.AmbientLight(0x4a1018, 0.9));
+
+    let raf = null, running = false, t0 = performance.now();
+    const m = { x: 0, y: 0 };
+    function frame() {
+      const t = (performance.now() - t0) / 1000;
+      uniforms.uTime.value = t;
+      camera.position.x = lerp(camera.position.x, m.x * 1.6, 0.04);
+      camera.position.y = lerp(camera.position.y, 1.7 + m.y * 0.5, 0.04);
+      camera.lookAt(look);
+      cube.rotation.set(t * 0.3, t * 0.42, 0); cube.position.y = 2 + Math.sin(t * 0.8) * 0.28;
+      renderer.render(scene, camera);
+      raf = requestAnimationFrame(frame);
+    }
+    const play = () => { if (!running) { running = true; raf = requestAnimationFrame(frame); } };
+    const pause = () => { running = false; if (raf) cancelAnimationFrame(raf); raf = null; };
+    function resize() { renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); }
+    addEventListener("resize", resize);
+    addEventListener("mousemove", e => { m.x = (e.clientX / innerWidth - 0.5) * 2; m.y = (e.clientY / innerHeight - 0.5) * -2; });
+    document.addEventListener("visibilitychange", () => { document.hidden ? pause() : (document.body.classList.contains("no-motion") ? null : play()); });
+    resize(); play();
+    return { play, pause };
+  }
+
+  function field(cv) {
     const ctx = cv.getContext("2d");
     let w, h, dpr, blades = [], t = 0, raf = null, running = false;
     const mouse = { x: -999, y: -999 };
