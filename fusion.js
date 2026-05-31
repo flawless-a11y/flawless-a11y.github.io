@@ -32,7 +32,6 @@
   const gear = $("#gear"), panel = $("#panel");
   gear && gear.addEventListener("click", e => { e.stopPropagation(); panel.classList.toggle("open"); });
   document.addEventListener("click", e => { if (panel && panel.classList.contains("open") && !panel.contains(e.target) && !gear.contains(e.target)) panel.classList.remove("open"); });
-  $("#tTheme") && $("#tTheme").addEventListener("click", () => { $("#tTheme").classList.toggle("on"); document.body.classList.toggle("light"); });
   $("#tMotion") && $("#tMotion").addEventListener("click", () => { const on = $("#tMotion").classList.toggle("on"); document.body.classList.toggle("no-motion", !on); if (fieldCtl) on ? fieldCtl.play() : fieldCtl.pause(); });
   $("#tFull") && $("#tFull").addEventListener("click", () => { $("#tFull").classList.toggle("on"); if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); else document.exitFullscreen && document.exitFullscreen(); });
 
@@ -97,11 +96,10 @@
      DUAL-TINT WEBGL GRASS (hero-scoped)
      ========================================================= */
   function startField() {
-    const v = $("#heroVid"); if (!v) return null;
-    v.muted = true; v.playsInline = true;
-    const play = () => { try { const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); } catch (e) {} };
-    const pause = () => { try { v.pause(); } catch (e) {} };
-    reduce ? pause() : play();
+    const img = $("#heroImg"); if (!img) return null;
+    const play = () => { img.style.animationPlayState = "running"; };
+    const pause = () => { img.style.animationPlayState = "paused"; };
+    if (reduce) pause();
     return { play, pause };
   }
   function grass(cv) {
