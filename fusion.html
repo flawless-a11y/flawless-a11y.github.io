@@ -48,6 +48,7 @@
 <!-- HERO -->
 <section class="hero" id="hero">
   <img class="hero-img" id="heroImg" src="assets/hero.jpg" alt="" aria-hidden="true" />
+  <canvas class="hero-rain" id="rain" aria-hidden="true"></canvas>
   <div class="hero-fade" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow rv" data-rv="fade"><span class="b">BACKEND</span> SYSTEMS <span class="sep">/</span> <span class="c">BUILT AT SCALE</span></p>
@@ -86,6 +87,23 @@
     <div class="dim left"></div><div class="dim right"></div>
     <div class="glow left"></div><div class="glow right"></div>
     <div class="duel-mid"></div>
+
+    <div class="float-set left" aria-hidden="true">
+      <div class="chip" style="top:13%; left:5%; --i:0"><pre>def process_user_data(uid):
+  db.query(
+    "SELECT * FROM accounts
+     WHERE id = $1")</pre></div>
+      <div class="chip" style="top:14%; left:34%; --i:2">{ "service": "x-account-statements" }</div>
+      <div class="chip" style="top:39%; left:6%; --i:1"><b>schema · accounts</b><span>id · merchant_id · balance · created_at</span></div>
+      <div class="chip" style="top:45%; left:32%; --i:3">37M+ rows · zero downtime</div>
+    </div>
+    <div class="float-set right" aria-hidden="true">
+      <div class="chip" style="top:13%; right:6%; --i:0"><b>docker</b><span>build → push → registry</span></div>
+      <div class="chip" style="top:15%; right:34%; --i:2">kubectl rollout status ✓</div>
+      <div class="chip" style="top:38%; right:5%; --i:1"><b>CI / CD</b><span>build → test → deploy → prod</span></div>
+      <div class="chip" style="top:45%; right:30%; --i:3">AWS EKS · K8s · 99.9% uptime</div>
+    </div>
+
     <span class="persona-tag l">The Architect</span>
     <span class="persona-tag r">The Operator</span>
 

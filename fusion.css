@@ -93,6 +93,7 @@ main{ position:relative; z-index:1; }
 .hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; animation:heroKen 24s ease-in-out infinite alternate; will-change:transform; }
 @keyframes heroKen{ from{ transform:scale(1.05); } to{ transform:scale(1.13) translate(-1.5%, -1%); } }
 body.no-motion .hero-img{ animation-play-state:paused; }
+.hero-rain{ position:absolute; inset:0; width:100%; height:100%; z-index:1; opacity:.72; pointer-events:none; }
 .hero-fade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, var(--bg) 6%, rgba(8,9,14,.55) 28%, rgba(8,9,14,.22) 58%, rgba(8,9,14,.4)), linear-gradient(180deg, var(--bg) 1%, transparent 30%, transparent 66%, rgba(0,0,0,.6)); }
 .hero-inner{ position:relative; z-index:2; max-width:1100px; }
 .eyebrow{ font-family:var(--mono); font-size:.8rem; letter-spacing:.26em; color:var(--muted); margin-bottom:1.6rem; }
@@ -224,6 +225,20 @@ body.no-motion .hero-img{ animation-play-state:paused; }
 .duel-hint .b{ color:var(--blue-2); } .duel-hint .c{ color:var(--crimson); }
 .duel-stage.hover-left .duel-hint, .duel-stage.hover-right .duel-hint{ opacity:0; }
 @media(max-width:760px){ .duel-stage{ aspect-ratio:4/5; } .persona{ width:80%; } .persona-list li{ font-size:.84rem; } }
+/* floating tech chips on hover */
+.float-set{ position:absolute; inset:0; z-index:6; }
+.duel-stage.hover-left .float-set.left{ animation:drift 8s ease-in-out infinite; }
+.duel-stage.hover-right .float-set.right{ animation:drift 8s ease-in-out infinite; }
+@keyframes drift{ 50%{ transform:translateY(-7px); } }
+.chip{ position:absolute; font-family:var(--mono); font-size:.62rem; line-height:1.5; padding:.5rem .7rem; border-radius:8px; background:rgba(8,9,14,.72); backdrop-filter:blur(6px); border:1px solid; opacity:0; transform:translateY(16px) scale(.95); transition:opacity .5s var(--ease), transform .6s var(--ease); transition-delay:calc(var(--i,0)*.09s); max-width:42%; }
+.float-set.left .chip{ border-color:rgba(131,169,255,.42); color:var(--blue-2); box-shadow:0 0 26px -10px var(--blue-glow); }
+.float-set.right .chip{ border-color:rgba(255,83,111,.42); color:var(--crimson-2); box-shadow:0 0 26px -10px var(--crimson-glow); }
+.chip pre{ font-family:var(--mono); white-space:pre; margin:0; font-size:.58rem; color:#cdddff; }
+.float-set.right .chip pre{ color:#ffd2c0; }
+.chip b{ display:block; color:#fff; margin-bottom:.2rem; text-transform:uppercase; letter-spacing:.06em; }
+.chip span{ color:var(--muted); }
+.duel-stage.hover-left .float-set.left .chip, .duel-stage.hover-right .float-set.right .chip{ opacity:1; transform:none; }
+@media(max-width:760px){ .float-set{ display:none; } }
 
 @media (prefers-reduced-motion:reduce){
   *{ animation:none !important; transition-duration:.001s !important; }

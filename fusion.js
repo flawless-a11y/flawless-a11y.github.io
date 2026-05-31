@@ -108,10 +108,50 @@
      DUAL-TINT WEBGL GRASS (hero-scoped)
      ========================================================= */
   function startField() {
-    const img = $("#heroImg"); if (!img) return null;
-    const play = () => { img.style.animationPlayState = "running"; };
-    const pause = () => { img.style.animationPlayState = "paused"; };
-    if (reduce) pause();
+    const img = $("#heroImg");
+    const r = reduce ? null : rain();
+    const play = () => { if (img) img.style.animationPlayState = "running"; r && r.play(); };
+    const pause = () => { if (img) img.style.animationPlayState = "paused"; r && r.pause(); };
+    if (reduce && img) img.style.animationPlayState = "paused";
+    return { play, pause };
+  }
+
+  /* binary "waterfall" rain over the hero (blue left, crimson right) */
+  function rain() {
+    const cv = $("#rain"); if (!cv) return null;
+    const ctx = cv.getContext("2d"); const host = cv.parentElement;
+    let w, h, cols, drops, raf = null, running = false, fs = 14;
+    const G = "01";
+    function resize() {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = host.clientWidth; h = host.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      fs = Math.max(12, Math.round(w / 120)); cols = Math.ceil(w / fs);
+      drops = Array.from({ length: cols }, () => Math.random() * -h / fs);
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.font = fs + "px 'Space Mono', monospace";
+      const trail = 16;
+      for (let i = 0; i < cols; i++) {
+        const x = i * fs, head = drops[i], blue = i < cols / 2;
+        const c = blue ? "131,169,255" : "255,90,120";
+        for (let k = 0; k < trail; k++) {
+          const yy = (head - k) * fs; if (yy < 0 || yy > h) continue;
+          const a = k === 0 ? 1 : (1 - k / trail) * 0.55;
+          ctx.fillStyle = "rgba(" + c + "," + a + ")";
+          ctx.fillText(G[(Math.random() * G.length) | 0], x, yy);
+        }
+        drops[i] += blue ? 0.5 : 0.58;
+        if (head * fs > h + trail * fs) drops[i] = Math.random() * -16;
+      }
+      raf = requestAnimationFrame(draw);
+    }
+    const play = () => { if (!running) { running = true; raf = requestAnimationFrame(draw); } };
+    const pause = () => { running = false; if (raf) cancelAnimationFrame(raf); raf = null; ctx.clearRect(0, 0, w, h); };
+    addEventListener("resize", resize);
+    document.addEventListener("visibilitychange", () => { document.hidden ? pause() : (document.body.classList.contains("no-motion") ? null : play()); });
+    resize(); play();
     return { play, pause };
   }
   function grass(cv) {
