@@ -188,6 +188,43 @@ body.no-motion .hero-img{ animation-play-state:paused; }
 .dock-i:hover::after{ opacity:1; transform:translateX(-50%) translateY(0); }
 @media(max-width:540px){ .dock{ gap:.2rem; padding:.4rem; } .dock-i{ width:40px; height:40px; } }
 
+/* TWO SIDES — interactive duel */
+.duel{ padding:clamp(5rem,12vh,9rem) var(--pad); }
+.duel-stage{ position:relative; width:100%; aspect-ratio:16/8; max-height:80vh; border-radius:18px; overflow:hidden; border:1px solid var(--glass-line); cursor:none; }
+.duel-stage > *{ pointer-events:none; }
+.duel-zone{ pointer-events:auto; }
+.duel-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.95) brightness(.82); transition:transform .9s var(--ease), filter .6s; }
+.duel-stage.hover-left .duel-img{ transform:scale(1.05) translateX(2.5%); }
+.duel-stage.hover-right .duel-img{ transform:scale(1.05) translateX(-2.5%); }
+.dim{ position:absolute; top:0; bottom:0; width:60%; transition:opacity .55s var(--ease); }
+.dim.left{ left:0; background:linear-gradient(90deg, rgba(4,5,9,.7), transparent); opacity:.35; }
+.dim.right{ right:0; background:linear-gradient(270deg, rgba(4,5,9,.7), transparent); opacity:.35; }
+.duel-stage.hover-left .dim.left{ opacity:0; } .duel-stage.hover-left .dim.right{ opacity:.82; }
+.duel-stage.hover-right .dim.right{ opacity:0; } .duel-stage.hover-right .dim.left{ opacity:.82; }
+.glow{ position:absolute; top:0; bottom:0; width:55%; opacity:0; mix-blend-mode:screen; transition:opacity .55s var(--ease); }
+.glow.left{ left:0; background:radial-gradient(58% 60% at 28% 42%, rgba(47,93,255,.45), transparent 70%); }
+.glow.right{ right:0; background:radial-gradient(58% 60% at 72% 40%, rgba(224,20,60,.5), transparent 70%); }
+.duel-stage.hover-left .glow.left{ opacity:1; } .duel-stage.hover-right .glow.right{ opacity:1; }
+.duel-mid{ position:absolute; top:10%; bottom:10%; left:50%; width:1px; transform:translateX(-50%); background:linear-gradient(var(--blue-2),transparent 50%,var(--crimson)); opacity:.45; }
+.duel-zone{ position:absolute; top:0; bottom:0; width:50%; border:0; background:transparent; cursor:none; z-index:5; }
+.duel-zone.left{ left:0; } .duel-zone.right{ right:0; }
+.persona-tag{ position:absolute; top:7%; z-index:6; font-family:var(--mono); font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; transition:opacity .4s, transform .5s var(--ease); }
+.persona-tag.l{ left:5%; color:var(--blue-2); } .persona-tag.r{ right:5%; color:var(--crimson-2); }
+.duel-stage.hover-left .persona-tag.r, .duel-stage.hover-right .persona-tag.l{ opacity:.2; }
+.persona{ position:absolute; bottom:0; width:min(48%,470px); padding:clamp(1.4rem,2.5vw,2.3rem); z-index:6; opacity:0; transform:translateY(26px); transition:opacity .5s var(--ease), transform .6s var(--ease); }
+.p-left{ left:0; } .p-right{ right:0; text-align:right; }
+.duel-stage.hover-left .p-left{ opacity:1; transform:none; } .duel-stage.hover-right .p-right{ opacity:1; transform:none; }
+.persona-eyebrow{ font-family:var(--mono); font-size:.66rem; letter-spacing:.24em; }
+.p-left .persona-eyebrow{ color:var(--blue-2); } .p-right .persona-eyebrow{ color:var(--crimson-2); }
+.persona-title{ font-family:var(--display); font-weight:900; font-size:clamp(1.9rem,4vw,3.1rem); letter-spacing:-.02em; margin:.4rem 0; }
+.persona-sub{ font-family:var(--serif); font-style:italic; color:var(--ink); opacity:.85; margin-bottom:1.1rem; }
+.persona-list{ list-style:none; display:flex; flex-direction:column; gap:.6rem; }
+.persona-list li{ font-size:.92rem; color:var(--muted); line-height:1.4; } .persona-list b{ color:var(--ink); font-weight:700; }
+.duel-hint{ position:absolute; bottom:1.2rem; left:50%; transform:translateX(-50%); z-index:6; display:flex; gap:.9rem; align-items:center; font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); transition:opacity .4s; white-space:nowrap; }
+.duel-hint .b{ color:var(--blue-2); } .duel-hint .c{ color:var(--crimson); }
+.duel-stage.hover-left .duel-hint, .duel-stage.hover-right .duel-hint{ opacity:0; }
+@media(max-width:760px){ .duel-stage{ aspect-ratio:4/5; } .persona{ width:80%; } .persona-list li{ font-size:.84rem; } }
+
 @media (prefers-reduced-motion:reduce){
   *{ animation:none !important; transition-duration:.001s !important; }
   .rv,[data-rv],.hero-type .up{ opacity:1 !important; transform:none !important; }

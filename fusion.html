@@ -74,6 +74,48 @@
   </div>
 </div>
 
+<!-- TWO SIDES — interactive duel -->
+<section class="duel" id="duel">
+  <div class="duel-head">
+    <span class="sec-tag rv" data-rv="fade">▚ TWO SIDES · ONE ENGINEER</span>
+    <h2 class="sec-title rv" data-rv="up">Hover the <span class="ser">duel.</span></h2>
+    <p class="sec-kicker rv" data-rv="up">Every system needs both instincts — sweep your cursor across each side.</p>
+  </div>
+  <div class="duel-stage rv" data-rv="up" id="duelStage">
+    <img class="duel-img" src="assets/hero.jpg" alt="Two sides of the engineer" />
+    <div class="dim left"></div><div class="dim right"></div>
+    <div class="glow left"></div><div class="glow right"></div>
+    <div class="duel-mid"></div>
+    <span class="persona-tag l">The Architect</span>
+    <span class="persona-tag r">The Operator</span>
+
+    <button class="duel-zone left" data-side="left" data-cur="hover" aria-label="Reveal The Architect"></button>
+    <button class="duel-zone right" data-side="right" data-cur="hover" aria-label="Reveal The Operator"></button>
+
+    <div class="persona p-left">
+      <span class="persona-eyebrow">BLUE CORE</span>
+      <h3 class="persona-title">The Architect</h3>
+      <p class="persona-sub">Cold. Precise. Built to last.</p>
+      <ul class="persona-list">
+        <li><b>Systems decomposition</b> — monolith → microservices; 37M+ records, zero downtime</li>
+        <li><b>Observability &amp; reliability</b> — Langfuse + ClickHouse; 99.9% uptime; 95%+ tests</li>
+        <li><b>Correctness at scale</b> — reconciliation 20%→90%; read/write DB segregation</li>
+      </ul>
+    </div>
+    <div class="persona p-right">
+      <span class="persona-eyebrow">FIRE CORE</span>
+      <h3 class="persona-title">The Operator</h3>
+      <p class="persona-sub">Fast. Driven. Ships &amp; owns.</p>
+      <ul class="persona-list">
+        <li><b>Ship &amp; iterate</b> — TDS across 8 repos, spec → UAT</li>
+        <li><b>End-to-end ownership</b> — design → rollout → Edge/Kong → on-call</li>
+        <li><b>Cross-service impact</b> — payments, payouts &amp; bank onboarding at scale</li>
+      </ul>
+    </div>
+    <div class="duel-hint"><span class="b">◄ Architect</span><span>· hover ·</span><span class="c">Operator ►</span></div>
+  </div>
+</section>
+
 <!-- SIGNATURE BUILDS — horizontal pinned gallery (from index #work) -->
 <section class="work" id="work">
   <div class="work-head">

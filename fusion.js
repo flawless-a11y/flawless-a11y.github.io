@@ -10,7 +10,7 @@
   $("#yr") && ($("#yr").textContent = new Date().getFullYear());
 
   let fieldCtl = null;
-  const boot = () => { document.body.classList.add("ready"); $(".hero") && $(".hero").classList.add("in"); reveal(); counters(); gaugeFx(); fieldCtl = startField(); };
+  const boot = () => { document.body.classList.add("ready"); $(".hero") && $(".hero").classList.add("in"); reveal(); counters(); gaugeFx(); duel(); fieldCtl = startField(); };
 
   /* loader */
   const loader = $("#loader");
@@ -85,6 +85,18 @@
     } catch (e) {}
     if (reduce) { sec.classList.add("run"); return; }
     new IntersectionObserver(es => es.forEach(e => sec.classList.toggle("run", e.isIntersecting)), { threshold: 0.4 }).observe(sec);
+  }
+
+  /* two-sides interactive duel */
+  function duel() {
+    const stage = $("#duelStage"); if (!stage) return;
+    const set = s => { stage.classList.toggle("hover-left", s === "left"); stage.classList.toggle("hover-right", s === "right"); };
+    $$(".duel-zone", stage).forEach(z => {
+      z.addEventListener("mouseenter", () => set(z.dataset.side));
+      z.addEventListener("focus", () => set(z.dataset.side));
+      z.addEventListener("click", e => { e.preventDefault(); set(z.dataset.side); });
+    });
+    stage.addEventListener("mouseleave", () => set(null));
   }
 
   /* magnetic */
