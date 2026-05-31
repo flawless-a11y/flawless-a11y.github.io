@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prashant Chauhan — Backend Engineer / Systems at Scale</title>
+<meta name="description" content="Prashant Chauhan — backend software engineer crafting high-performance fintech systems and observability platforms." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="studio.css" />
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor" id="cur" aria-hidden="true"></div>
+<div class="cursor-dot" id="curDot" aria-hidden="true"></div>
+
+<!-- loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-word"><span>PRASHANT</span></div>
+  <div class="loader-bar"><i id="loaderFill"></i></div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
+
+<!-- corner UI -->
+<div class="dot-corner tl" aria-hidden="true"></div>
+<div class="dot-corner tr" aria-hidden="true"></div>
+<a class="side-tab" href="#contact" data-cur="hover"><span>Let's talk</span></a>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="logo" data-cur="hover"><b>Prashant</b>Chauhan<i class="status">● available</i></a>
+  <nav class="menu">
+    <a href="#work" data-cur="hover">Work</a>
+    <a href="#studio" data-cur="hover">The&nbsp;Engineer</a>
+    <a href="#contact" data-cur="hover">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glowdot" aria-hidden="true"></div>
+  <p class="eyebrow rv" data-rv="fade"><span class="acc">BACKEND</span> SYSTEMS / BUILT AT SCALE</p>
+  <h1 class="hero-type">
+    <span class="row"><span class="up">Prashant</span></span>
+    <span class="row"><span class="up"><span class="hl">Chauhan</span></span></span>
+  </h1>
+  <p class="hero-lede rv" data-rv="up">Backend engineer crafting high-performance fintech systems — large-scale microservice decomposition and the <em>observability platforms</em> that keep them honest.</p>
+  <div class="hero-cta rv" data-rv="up">
+    <a class="icon-btn magnetic" href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener" data-cur="hover" aria-label="LinkedIn">in</a>
+    <a class="pill magnetic" href="#work" data-cur="hover"><span>View the Work</span></a>
+    <a class="pill ghost magnetic" href="#contact" data-cur="hover"><span>Get in touch</span></a>
+  </div>
+  <a href="#work" class="hero-scroll" data-cur="hover" aria-label="scroll"><span></span></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Go</span><i>✳</i><span>Kafka</span><i>✳</i><span>AWS</span><i>✳</i><span>ClickHouse</span><i>✳</i><span>Langfuse</span><i>✳</i><span>Terraform</span><i>✳</i><span>Kubernetes</span><i>✳</i><span>Distributed Systems</span><i>✳</i>
+    <span>Go</span><i>✳</i><span>Kafka</span><i>✳</i><span>AWS</span><i>✳</i><span>ClickHouse</span><i>✳</i><span>Langfuse</span><i>✳</i><span>Terraform</span><i>✳</i><span>Kubernetes</span><i>✳</i><span>Distributed Systems</span><i>✳</i>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="sec-head">
+    <span class="sec-tag rv" data-rv="fade">(01) — Selected work</span>
+    <h2 class="sec-title rv" data-rv="up">Things I've<br/>shipped.</h2>
+  </div>
+
+  <div class="list">
+    <a class="item" data-cur="open" href="#contact">
+      <span class="item-no">01</span>
+      <span class="item-title">LLM Observability Platform</span>
+      <span class="item-meta">Owner · Live in prod</span>
+      <span class="item-tags">Langfuse · ClickHouse · AWS</span>
+      <span class="item-arrow">↗</span>
+    </a>
+    <a class="item" data-cur="open" href="#contact">
+      <span class="item-no">02</span>
+      <span class="item-title">TDS for Business Banking</span>
+      <span class="item-meta">End-to-end · 8 repos</span>
+      <span class="item-tags">Go · Kong · Terraform</span>
+      <span class="item-arrow">↗</span>
+    </a>
+    <a class="item" data-cur="open" href="#contact">
+      <span class="item-no">03</span>
+      <span class="item-title">Account-Statements Decomp</span>
+      <span class="item-meta">37M+ records · zero downtime</span>
+      <span class="item-tags">Go · MySQL · Elasticsearch</span>
+      <span class="item-arrow">↗</span>
+    </a>
+    <a class="item" data-cur="open" href="#contact">
+      <span class="item-no">04</span>
+      <span class="item-title">Reconciliation Overhaul</span>
+      <span class="item-meta">20% → 90% recon rate</span>
+      <span class="item-tags">Reporting · facts-table</span>
+      <span class="item-arrow">↗</span>
+    </a>
+    <a class="item" data-cur="open" href="#contact">
+      <span class="item-no">05</span>
+      <span class="item-title">Polyglot PII Redaction SDK</span>
+      <span class="item-meta">5 languages · Presidio</span>
+      <span class="item-tags">Go · Python · TS · Ruby · Java</span>
+      <span class="item-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- STUDIO / ABOUT -->
+<section class="studio" id="studio">
+  <span class="sec-tag rv" data-rv="fade">(02) — The engineer</span>
+  <p class="studio-statement rv" data-rv="up">I build the <span class="hl2">machinery</span> behind fintech at scale — migrations, reconciliations and platform work where correctness and reliability are non-negotiable. Currently at <em>Razorpay</em>; previously <em>Paytm Payments Bank</em>.</p>
+
+  <div class="stats">
+    <div class="stat rv" data-rv="up"><b><span class="count" data-to="37" data-suf="M+">0</span></b><span>records migrated, zero downtime</span></div>
+    <div class="stat rv" data-rv="up"><b><span class="count" data-to="99.9" data-dec="1" data-suf="%">0</span></b><span>platform uptime</span></div>
+    <div class="stat rv" data-rv="up"><b>20→<span class="count" data-to="90" data-suf="%">0</span></b><span>reconciliation rate</span></div>
+    <div class="stat rv" data-rv="up"><b><span class="count" data-to="4" data-suf="+">0</span></b><span>years shipping fintech</span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="sec-tag rv" data-rv="fade">(03) — Contact</span>
+  <h2 class="contact-type">Let's build<br/>something <span class="hl">fast.</span></h2>
+  <div class="contact-links rv" data-rv="up">
+    <a class="pill magnetic" href="mailto:chnpr2318@gmail.com" data-cur="hover"><span>chnpr2318@gmail.com</span></a>
+    <a class="pill ghost magnetic" href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener" data-cur="hover"><span>LinkedIn ↗</span></a>
+    <a class="pill ghost magnetic" href="https://github.com/pacifich" target="_blank" rel="noopener" data-cur="hover"><span>GitHub ↗</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span>Prashant Chauhan © <span id="yr"></span></span>
+  <span class="foot-mid">Bengaluru, IN</span>
+  <a href="#top" data-cur="hover">Back to top ↑</a>
+</footer>
+
+<script src="studio.js"></script>
+</body>
+</html>
