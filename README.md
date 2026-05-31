@@ -39,7 +39,16 @@ To stop the server: `Ctrl-C` in the terminal running it.
 
 - **Type:** Cormorant Garamond (display serif) + Hanken Grotesk (body) + JetBrains Mono (telemetry/labels) — via Google Fonts.
 - **Palette:** midnight navy base, electric-blue (`#2F5DFF`) + champagne-gold (`#C9A769`) accents, platinum text.
-- **Motion:** scroll-reveal animations **re-fire on scroll in *and* out** (IntersectionObserver toggling `.in-view`); animated counters; parallax; a live particle-network canvas in the hero; magnetic buttons; subtle 3D card tilt.
+- **Motion (v2 — cinematic):**
+  - Per-character hero title reveal (staggered rise/rotate) + mouse-tilt parallax + orbital ring
+  - **Horizontal pinned "Signature Builds" gallery** — cards scroll sideways as you scroll down
+  - **SVG tachometer gauge** that revs (gradient arc + needle sweep) on scroll
+  - Text-**scramble/decode** on the rotating tagline
+  - Side **section-rail** with active indicator; **per-section accent shift** (background glow changes per section)
+  - **Scroll-velocity marquee** (skews/drifts with scroll speed)
+  - Animated **counters** (with a subtle rev/overshoot), parallax, a live **particle-network** hero canvas
+  - **Aura cursor** + magnetic buttons + 3D card tilt; animated preloader
+  - All scroll-reveals **re-fire on scroll in *and* out** (IntersectionObserver toggling `.in-view`)
 - **Accessibility:** respects `prefers-reduced-motion` (disables motion, shows content) and falls back to a normal cursor on touch devices.
 - **Responsive:** fluid `clamp()` typography; grids collapse on tablet/mobile; a burger menu under 720px.
 
