@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>LinkedIn banner — Prashant Chauhan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#050505; --ink:#e9eef1; --muted:#8b93a3;
+    --blue:#0d99ff; --mint:#99faf4; --red:#ff544b;
+    --display:'Space Grotesk', system-ui, sans-serif;
+    --mono:'Space Mono', ui-monospace, monospace;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html, body{ background:#000; }
+  .banner{
+    width:1584px; height:396px; position:relative; overflow:hidden;
+    background:var(--bg); color:var(--ink);
+    font-family:var(--display);
+  }
+  /* atmospheric glows */
+  .banner::before{
+    content:""; position:absolute; inset:-15% -10% auto auto; width:80%; height:160%;
+    background:radial-gradient(38% 50% at 78% 30%, rgba(13,153,255,.32), transparent 60%);
+    pointer-events:none;
+  }
+  .banner::after{
+    content:""; position:absolute; inset:auto -5% -20% -5%; width:60%; height:80%;
+    background:radial-gradient(40% 60% at 20% 80%, rgba(153,250,244,.18), transparent 60%);
+    pointer-events:none;
+  }
+  /* subtle grid texture */
+  .grid{
+    position:absolute; inset:0; opacity:.10; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(233,238,241,.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(233,238,241,.16) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:linear-gradient(90deg, transparent 0%, #000 30%, #000 90%, transparent 100%);
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 30%, #000 90%, transparent 100%);
+  }
+
+  /* left column — typography */
+  .col-left{
+    position:absolute; left:88px; top:96px; right:560px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:13px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--mint); display:flex; align-items:center; gap:14px;
+  }
+  .eyebrow .dot{ width:8px; height:8px; border-radius:50%; background:var(--mint); box-shadow:0 0 14px var(--mint); }
+  .name{
+    font-family:var(--display); font-weight:700; font-size:84px; line-height:.94; letter-spacing:-.03em;
+  }
+  .name .last{ color:var(--ink); }
+  .subline{
+    font-family:var(--display); font-weight:500; font-size:24px; color:var(--ink); margin-top:6px;
+  }
+  .subline .em{ color:var(--mint); }
+  .stack{
+    font-family:var(--mono); font-size:14px; letter-spacing:.06em; color:var(--muted); margin-top:8px;
+  }
+  .stack b{ color:var(--ink); font-weight:400; }
+
+  /* right column — floating spec chips */
+  .col-right{ position:absolute; right:88px; top:34px; width:430px; height:328px; }
+  .chip{
+    position:absolute; font-family:var(--mono); font-size:13px; line-height:1.5;
+    padding:10px 14px; border-radius:10px;
+    background:rgba(5,5,5,.65); backdrop-filter:blur(6px);
+    border:1px solid rgba(13,153,255,.35);
+    color:var(--ink); white-space:nowrap; box-shadow:0 14px 30px -16px rgba(13,153,255,.5);
+  }
+  .chip.mint{ border-color:rgba(153,250,244,.45); box-shadow:0 14px 30px -16px rgba(153,250,244,.45); }
+  .chip b{ color:var(--mint); font-weight:400; }
+  .chip .blue{ color:var(--blue); }
+  .chip .red{ color:var(--red); }
+  /* positions */
+  .c1{ top:0px;   left:30px;  }
+  .c2{ top:62px;  left:170px; }
+  .c3{ top:124px; left:0px;   }
+  .c4{ top:184px; left:150px; }
+  .c5{ top:244px; left:40px;  }
+
+  /* corner brand mark */
+  .brand{
+    position:absolute; right:88px; bottom:34px; display:flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13px; letter-spacing:.16em; color:var(--ink); text-transform:uppercase;
+  }
+  .brand .pip{ width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--blue), var(--red)); box-shadow:0 0 10px rgba(13,153,255,.7); }
+  /* left bottom mark */
+  .left-mark{
+    position:absolute; left:88px; bottom:34px;
+    font-family:var(--mono); font-size:13px; letter-spacing:.18em; color:var(--ink); text-transform:uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="banner" id="banner">
+    <div class="grid"></div>
+
+    <div class="col-left">
+      <div class="eyebrow"><span class="dot"></span>BACKEND · DISTRIBUTED SYSTEMS · LLM OBSERVABILITY</div>
+      <div class="name">Prashant <span class="last">Chauhan</span></div>
+      <div class="subline">Fintech systems <span class="em">at scale.</span></div>
+      <div class="stack"><b>Go</b> · Kafka · AWS · Kubernetes · ClickHouse · Terraform · Langfuse</div>
+    </div>
+
+    <div class="col-right">
+      <div class="chip c1"><b>service</b> · <span class="blue">x-account-statements</span></div>
+      <div class="chip c2 mint">37M+ records · <b>zero downtime</b></div>
+      <div class="chip c3"><b>uptime</b> · <span class="blue">99.9%</span></div>
+      <div class="chip c4 mint">Langfuse + ClickHouse <span class="blue">@</span> AWS EKS</div>
+      <div class="chip c5"><b>recon</b> · 20% → <span class="red">90%</span></div>
+    </div>
+
+    <span class="left-mark">Bengaluru · IN</span>
+    <span class="brand"><span class="pip"></span>linkedin.com/in/pacifich</span>
+  </div>
+</body>
+</html>

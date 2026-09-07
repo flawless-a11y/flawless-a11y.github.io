@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prashant Chauhan — Backend Systems, Engineered for Performance</title>
+<meta name="description" content="Prashant Chauhan — Backend Software Development Engineer at Razorpay. High-performance fintech systems, observability platforms, and large-scale microservice decomposition." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- atmosphere -->
+<div class="bg-shift" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="cursor-aura" id="cursorAura" aria-hidden="true"></div>
+
+<!-- scroll progress -->
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- custom cursor -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label" id="cursorLabel"></span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <div class="pre-monogram" id="preMono">PC</div>
+    <div class="pre-line"><span id="preLineFill"></span></div>
+    <div class="pre-meta">
+      <span class="pre-label" id="preLabel">CALIBRATING SYSTEMS</span>
+      <span class="pre-count" id="preCount">00</span>
+    </div>
+  </div>
+</div>
+
+<!-- side rail -->
+<aside class="rail" id="rail" aria-hidden="true">
+  <a href="#hero" data-label="Intro" data-cursor="hover" class="active"><i></i></a>
+  <a href="#performance" data-label="Performance" data-cursor="hover"><i></i></a>
+  <a href="#engineer" data-label="The Engineer" data-cursor="hover"><i></i></a>
+  <a href="#approach" data-label="Approach" data-cursor="hover"><i></i></a>
+  <a href="#work" data-label="Signature Builds" data-cursor="hover"><i></i></a>
+  <a href="#trajectory" data-label="Trajectory" data-cursor="hover"><i></i></a>
+  <a href="#capabilities" data-label="Capabilities" data-cursor="hover"><i></i></a>
+  <a href="#contact" data-label="Connect" data-cursor="hover"><i></i></a>
+</aside>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#hero" class="brand" data-cursor="hover">
+    <span class="brand-mark">PC</span>
+    <span class="brand-name">Prashant&nbsp;Chauhan</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#performance" data-num="01" data-cursor="hover">Performance</a>
+    <a href="#engineer"    data-num="02" data-cursor="hover">The&nbsp;Engineer</a>
+    <a href="#work"        data-num="03" data-cursor="hover">Signature&nbsp;Builds</a>
+    <a href="#trajectory"  data-num="04" data-cursor="hover">Trajectory</a>
+    <a href="#capabilities" data-num="05" data-cursor="hover">Capabilities</a>
+  </nav>
+  <a href="#contact" class="nav-cta" data-cursor="hover"><span>Connect</span></a>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</header>
+
+<main id="scroll">
+
+<!-- ===== HERO / 00 ===== -->
+<section class="hero" id="hero">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-ring" aria-hidden="true" data-tilt="20"></div>
+
+  <div class="hero-inner" id="heroTilt">
+    <div class="hero-eyebrow reveal" data-reveal="fade">
+      <span class="tick"></span> BENGALURU, IN &nbsp;·&nbsp; BACKEND SYSTEMS &nbsp;·&nbsp; EST. 2022
+    </div>
+
+    <h1 class="hero-title" data-tilt="8">
+      <span class="line"><span class="split">Prashant</span></span>
+      <span class="line line-outline"><span class="split">Chauhan</span></span>
+    </h1>
+
+    <div class="hero-sub reveal" data-reveal="fade-up">
+      <span class="hero-role">Backend Software Development Engineer</span>
+      <span class="hero-at">@ Razorpay</span>
+    </div>
+
+    <p class="hero-lede reveal" data-reveal="fade-up">
+      I engineer <span class="hl">high-performance backend systems</span> — large-scale
+      microservice decomposition, payments &amp; compliance, and the
+      <span class="hl">observability platforms</span> that keep them honest.
+    </p>
+
+    <div class="hero-actions reveal" data-reveal="fade-up">
+      <a href="#work" class="btn btn-primary magnetic" data-cursor="hover"><span>View the Work</span></a>
+      <a href="#contact" class="btn btn-ghost magnetic" data-cursor="hover"><span>Start a Conversation</span></a>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-rotator reveal" data-reveal="fade">
+      <span class="rotator-label">CURRENTLY ENGINEERING</span>
+      <span class="rotator" id="rotator" data-scramble>LLM observability at scale</span>
+    </div>
+    <a href="#performance" class="scroll-cue" data-cursor="hover" aria-label="Scroll">
+      <span>SCROLL</span><i></i>
+    </a>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" id="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Go</span><b>·</b><span>Kafka</span><b>·</b><span>AWS</span><b>·</b><span>ClickHouse</span><b>·</b><span>Langfuse</span><b>·</b><span>Terraform</span><b>·</b><span>Kubernetes</span><b>·</b><span>gRPC</span><b>·</b><span>Elasticsearch</span><b>·</b><span>Distributed Systems</span><b>·</b>
+    <span>Go</span><b>·</b><span>Kafka</span><b>·</b><span>AWS</span><b>·</b><span>ClickHouse</span><b>·</b><span>Langfuse</span><b>·</b><span>Terraform</span><b>·</b><span>Kubernetes</span><b>·</b><span>gRPC</span><b>·</b><span>Elasticsearch</span><b>·</b><span>Distributed Systems</span><b>·</b>
+  </div>
+</div>
+
+<!-- ===== PERFORMANCE / 01 ===== -->
+<section class="section performance" id="performance">
+  <div class="section-head">
+    <span class="section-index reveal" data-reveal="fade">01</span>
+    <h2 class="section-title reveal" data-reveal="wipe">Performance<br/><em>figures.</em></h2>
+    <p class="section-kicker reveal" data-reveal="fade-up" data-scramble>Form follows performance. A few numbers from the road so far — measured in production, not in slides.</p>
+  </div>
+
+  <!-- dyno gauge -->
+  <div class="dyno reveal" data-reveal="fade-up">
+    <div class="gauge-wrap">
+      <svg class="gauge" viewBox="0 0 320 200" id="gauge">
+        <path class="gauge-track" d="M 30 180 A 130 130 0 0 1 290 180" />
+        <path class="gauge-fill"  id="gaugeFill" d="M 30 180 A 130 130 0 0 1 290 180" />
+        <g class="gauge-ticks" id="gaugeTicks"></g>
+        <line class="gauge-needle" id="gaugeNeedle" x1="160" y1="180" x2="160" y2="70" />
+        <circle class="gauge-hub" cx="160" cy="180" r="7" />
+      </svg>
+      <div class="gauge-read">
+        <span class="counter" data-to="99.9" data-dec="1" data-suffix="%">0.0%</span>
+        <i>measured platform uptime</i>
+      </div>
+    </div>
+    <div class="dyno-copy">
+      <span class="dyno-kicker">SYSTEM REDLINE</span>
+      <p>Built to run hot and stay reliable — the account-statements platform holds <b>99.9% uptime</b> while processing up to <b>2M statements a day</b> across four partner banks.</p>
+    </div>
+  </div>
+
+  <div class="telemetry">
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num"><span class="counter" data-to="37" data-suffix="M+">0</span></div>
+      <div class="tele-label">Records migrated<br/><i>monolith → microservice, zero downtime</i></div>
+    </div>
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num"><span class="counter" data-to="99.9" data-dec="1" data-suffix="%">0</span></div>
+      <div class="tele-label">Platform uptime<br/><i>account-statements service</i></div>
+    </div>
+    <div class="tele reveal big" data-reveal="fade-up">
+      <div class="tele-num">20<span class="arrow">→</span><span class="counter" data-to="90" data-suffix="%">0</span></div>
+      <div class="tele-label">Reconciliation rate<br/><i>RBL · Yes Bank · IDFC</i></div>
+    </div>
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num"><span class="counter" data-to="2" data-suffix="M">0</span></div>
+      <div class="tele-label">Statements / day · peak<br/><i>12–20 lakh, four partner banks</i></div>
+    </div>
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num"><span class="counter" data-to="5">0</span></div>
+      <div class="tele-label">Languages, one SDK<br/><i>Go · Python · TS · Ruby · Java</i></div>
+    </div>
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num"><span class="counter" data-to="8">0</span></div>
+      <div class="tele-label">Repositories, one delivery<br/><i>TDS for Business Banking</i></div>
+    </div>
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num">−<span class="counter" data-to="45" data-suffix="%">0</span></div>
+      <div class="tele-label">Worker CPU reduced<br/><i>async Elasticsearch upsert</i></div>
+    </div>
+    <div class="tele reveal" data-reveal="fade-up">
+      <div class="tele-num"><span class="counter" data-to="4" data-suffix="+">0</span></div>
+      <div class="tele-label">Years shipping<br/><i>fintech, at scale</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE ENGINEER / 02 ===== -->
+<section class="section engineer" id="engineer">
+  <div class="engineer-watermark" aria-hidden="true" data-parallax="0.18">CRAFT</div>
+  <div class="engineer-grid">
+    <div class="engineer-left">
+      <span class="section-index reveal" data-reveal="fade">02</span>
+      <h2 class="section-title reveal" data-reveal="wipe">The<br/><em>engineer.</em></h2>
+    </div>
+    <div class="engineer-right">
+      <p class="lead-quote reveal" data-reveal="fade-up">
+        “If it isn't engineered for scale and built to be observed, it isn't finished.”
+      </p>
+      <p class="prose reveal" data-reveal="fade-up">
+        I'm a backend engineer at <strong>Razorpay</strong>, working where fintech meets serious scale.
+        Over the last few years I've pulled critical flows out of a PHP monolith into Go microservices,
+        migrated tens of millions of records with zero downtime, and most recently
+        <strong>owned and shipped Razorpay's self-hosted LLM observability platform</strong> to production.
+      </p>
+      <p class="prose reveal" data-reveal="fade-up">
+        My favourite problems span services, data and infrastructure at once — migrations,
+        reconciliations, and platform work where correctness and reliability are non-negotiable.
+        Before Razorpay I built core fintech systems at <strong>Paytm Payments Bank</strong>.
+      </p>
+      <ul class="focus-list">
+        <li class="reveal" data-reveal="fade-left"><span>01</span> Microservice decomposition &amp; zero-downtime migration</li>
+        <li class="reveal" data-reveal="fade-left"><span>02</span> Observability, evaluation &amp; cost for AI platforms</li>
+        <li class="reveal" data-reveal="fade-left"><span>03</span> Payments, payouts &amp; tax-compliance flows</li>
+        <li class="reveal" data-reveal="fade-left"><span>04</span> Reliability, reconciliation &amp; production incident response</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE APPROACH (cinematic interstitial) ===== -->
+<section class="approach" id="approach">
+  <div class="approach-media" aria-hidden="true">
+    <div class="approach-fallback"></div>
+    <img id="approachImg" class="approach-img" src="assets/approach.jpg" alt="" onerror="this.classList.add('missing')" />
+    <div class="approach-scanlines"></div>
+    <div class="approach-grid"></div>
+    <div class="approach-scan"></div>
+    <div class="hud hud-left" data-reveal="fade-right">
+      <span class="hud-tag">APPROACH_01</span>
+      <span class="hud-val">Move fast</span>
+      <span class="hud-sub">instinct · ship the spike</span>
+    </div>
+    <div class="hud hud-right" data-reveal="fade-left">
+      <span class="hud-tag">APPROACH_02</span>
+      <span class="hud-val">Build to last</span>
+      <span class="hud-sub">engineering · make it bulletproof</span>
+    </div>
+  </div>
+  <div class="approach-core">
+    <span class="approach-label reveal" data-reveal="fade">// THE APPROACH</span>
+    <h2 class="approach-title reveal" data-reveal="wipe">Two instincts.<br/><em>One engineer.</em></h2>
+    <div class="approach-term reveal" data-reveal="fade-up"><span class="term-prompt">$</span>&nbsp;<span id="approachType"></span><span class="term-cursor">▌</span></div>
+    <p class="approach-copy reveal" data-reveal="fade-up">Every system is a duel between speed and durability. I move fast to learn — then engineer the version that survives production: observed, tested, and built to scale.</p>
+  </div>
+</section>
+
+<!-- ===== SIGNATURE BUILDS / 03  (horizontal pinned gallery) ===== -->
+<section class="work" id="work">
+  <div class="section-head wide work-head">
+    <span class="section-index reveal" data-reveal="fade">03</span>
+    <h2 class="section-title reveal" data-reveal="wipe">Signature <em>builds.</em></h2>
+    <p class="section-kicker reveal" data-reveal="fade-up">A collection of systems I'm proud of — each one shipped, measured, and running. <span class="scroll-hint">Scroll →</span></p>
+  </div>
+
+  <div class="work-pin" id="workPin">
+    <div class="work-sticky">
+      <div class="work-track" id="workTrack">
+
+        <article class="build" data-cursor="view">
+          <div class="build-index">MODEL 01</div>
+          <div class="build-tag">Owner · Live in production</div>
+          <h3 class="build-title">Self-Hosted LLM<br/>Observability Platform</h3>
+          <p class="build-desc">Owned and shipped Razorpay's self-hosted <strong>Langfuse&nbsp;+&nbsp;ClickHouse</strong> platform — POC through architecture &amp; cost approvals to a full AWS&nbsp;EKS deployment.</p>
+          <div class="build-metrics"><span><b>~1/5</b> cost vs. enterprise</span><span><b>6+</b> AI products</span><span><b>&gt;5%</b> CI gate</span></div>
+          <div class="build-tech">Langfuse · ClickHouse · AWS EKS · Terraform · Helm · Spinnaker</div>
+          <div class="build-sheen" aria-hidden="true"></div>
+        </article>
+
+        <article class="build" data-cursor="view">
+          <div class="build-index">MODEL 02</div>
+          <div class="build-tag">End-to-end · 8 repositories</div>
+          <h3 class="build-title">TDS for Business<br/>Banking Payouts</h3>
+          <p class="build-desc">Led design &amp; backend across <strong>eight services</strong> — tax-compliance, payouts, CFA, API, authz — for single, bulk &amp; API payout flows, plus Edge/Kong onboarding.</p>
+          <div class="build-metrics"><span><b>8</b> repos</span><span><b>3</b> core services</span><span><b>spec → UAT</b></span></div>
+          <div class="build-tech">Go · gRPC · Kong · Terraform · vishnu · kube-manifests</div>
+          <div class="build-sheen" aria-hidden="true"></div>
+        </article>
+
+        <article class="build" data-cursor="view">
+          <div class="build-index">MODEL 03</div>
+          <div class="build-tag">Core contributor</div>
+          <h3 class="build-title">Account-Statements<br/>Decomposition</h3>
+          <p class="build-desc">Pulled account statements out of the API monolith into Go — <strong>37M+ records migrated with zero downtime</strong>, <code>GET /transactions/banking</code> to 100% cutoff, read/write DB segregation.</p>
+          <div class="build-metrics"><span><b>37M+</b> records</span><span><b>100%</b> cutoff</span><span><b>0</b> downtime</span></div>
+          <div class="build-tech">Go · MySQL · Elasticsearch · Airflow · S3 · Kafka/MSK</div>
+          <div class="build-sheen" aria-hidden="true"></div>
+        </article>
+
+        <article class="build" data-cursor="view">
+          <div class="build-index">MODEL 04</div>
+          <div class="build-tag">Reliability</div>
+          <h3 class="build-title">Reconciliation<br/>Overhaul</h3>
+          <p class="build-desc">Re-architected reconciliation across <strong>RBL, Yes Bank &amp; IDFC</strong> — rules, workspaces and data-sourcing — lifting the reconciliation rate from <strong>20% to 90%</strong>.</p>
+          <div class="build-metrics"><span><b>20→90%</b> recon rate</span><span><b>3</b> banks</span></div>
+          <div class="build-tech">Reporting pipelines · facts-table model · PHP/Scala/Python</div>
+          <div class="build-sheen" aria-hidden="true"></div>
+        </article>
+
+        <article class="build" data-cursor="view">
+          <div class="build-index">MODEL 05</div>
+          <div class="build-tag">Open-source style · internal</div>
+          <h3 class="build-title">Polyglot PII<br/>Redaction SDK</h3>
+          <p class="build-desc">An internal PII masking/redaction SDK across <strong>five languages</strong> using Microsoft Presidio (NER&nbsp;+&nbsp;regex) — defense-in-depth for LLM traces.</p>
+          <div class="build-metrics"><span><b>5</b> languages</span><span><b>4</b> masking layers</span></div>
+          <div class="build-tech">Go · Python · TypeScript · Ruby · Java · Presidio · OTEL</div>
+          <div class="build-sheen" aria-hidden="true"></div>
+        </article>
+
+        <a class="work-end" href="#contact" data-cursor="hover">
+          <span class="work-end-label">FULL DOSSIER</span>
+          <span class="work-end-title">Let's talk →</span>
+        </a>
+
+      </div>
+      <div class="work-rail" aria-hidden="true"><span id="workProg"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRAJECTORY / 04 ===== -->
+<section class="section trajectory" id="trajectory">
+  <div class="section-head">
+    <span class="section-index reveal" data-reveal="fade">04</span>
+    <h2 class="section-title reveal" data-reveal="wipe">Trajectory.</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-line" aria-hidden="true"><span id="tlFill"></span></div>
+
+    <div class="tl-item reveal" data-reveal="fade-left">
+      <div class="tl-when">Nov 2024 — Present</div>
+      <div class="tl-card">
+        <h3>Software Development Engineer <span>· Razorpay</span></h3>
+        <p>Bengaluru. Owned the LLM observability platform; led TDS for Business Banking across 8 repos; drove the account-statements decomposition (37M+ records), bank onboarding with Elasticsearch search, and a reconciliation overhaul to 90%.</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal" data-reveal="fade-left">
+      <div class="tl-when">Jan 2022 — Nov 2024</div>
+      <div class="tl-card">
+        <h3>Software Engineer <span>· Paytm Payments Bank</span></h3>
+        <p>Noida. Built the Order Management Service (~40% faster) powering AEPS, NCMC, Fixed Deposits, FASTag, Core Banking and more; secured inter-service comms (RSA/AES-GCM/JWT) and cut onboarding time ~80% with system documentation.</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal" data-reveal="fade-left">
+      <div class="tl-when">2018 — 2022</div>
+      <div class="tl-card">
+        <h3>B.E., Electronics &amp; Telecommunication <span>· Ramaiah Institute of Technology</span></h3>
+        <p>Bengaluru · CGPA 8.89.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES / 05 ===== -->
+<section class="section capabilities" id="capabilities">
+  <div class="section-head">
+    <span class="section-index reveal" data-reveal="fade">05</span>
+    <h2 class="section-title reveal" data-reveal="wipe">Capabilities.</h2>
+  </div>
+
+  <div class="cap-grid">
+    <div class="cap reveal" data-reveal="fade-up">
+      <h4>Languages</h4>
+      <div class="cap-tags"><span>Go</span><span>Java</span><span>Python</span><span>TypeScript</span><span>Ruby</span><span>PHP</span><span>Scala</span><span>SQL</span></div>
+    </div>
+    <div class="cap reveal" data-reveal="fade-up">
+      <h4>Backend &amp; Data</h4>
+      <div class="cap-tags"><span>Spring Boot</span><span>gRPC</span><span>Protobuf</span><span>Kafka</span><span>Microservices</span><span>Event-Driven</span><span>PostgreSQL</span><span>MySQL</span><span>ClickHouse</span><span>Elasticsearch</span><span>Redis</span></div>
+    </div>
+    <div class="cap reveal" data-reveal="fade-up">
+      <h4>Cloud, Infra &amp; IaC</h4>
+      <div class="cap-tags"><span>AWS</span><span>EKS</span><span>Terraform</span><span>Terragrunt</span><span>Helm</span><span>Spinnaker</span><span>Docker</span><span>Kubernetes</span><span>Kong</span><span>Airflow</span><span>CI/CD</span></div>
+    </div>
+    <div class="cap reveal" data-reveal="fade-up">
+      <h4>Observability &amp; AI</h4>
+      <div class="cap-tags"><span>Langfuse</span><span>OpenTelemetry</span><span>Grafana</span><span>Prometheus</span><span>Presidio</span><span>LiteLLM</span><span>LLM Observability</span><span>MCP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT / 06 ===== -->
+<section class="section contact" id="contact">
+  <div class="contact-glow" aria-hidden="true"></div>
+  <span class="section-index reveal" data-reveal="fade">06</span>
+  <h2 class="contact-title reveal" data-reveal="fade-up">Let's build something<br/>that <em>performs.</em></h2>
+  <p class="contact-sub reveal" data-reveal="fade-up">Open to high-scope backend &amp; platform work. The fastest way to reach me:</p>
+
+  <div class="contact-actions reveal" data-reveal="fade-up">
+    <a href="mailto:chnpr2318@gmail.com" class="btn btn-primary magnetic" data-cursor="hover"><span>chnpr2318@gmail.com</span></a>
+    <a href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-cursor="hover"><span>LinkedIn ↗</span></a>
+    <a href="https://github.com/pacifich" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-cursor="hover"><span>GitHub ↗</span></a>
+  </div>
+
+  <div class="contact-outline" aria-hidden="true" data-parallax="0.12">PRASHANT&nbsp;CHAUHAN</div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-row">
+    <span class="footer-mark">PC</span>
+    <span class="footer-mid">Engineered in Bengaluru · <span id="year"></span></span>
+    <a href="#hero" class="footer-top" data-cursor="hover">Back to top ↑</a>
+  </div>
+  <div class="footer-note">Built from scratch — vanilla HTML/CSS/JS. An homage to the pursuit of performance.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
