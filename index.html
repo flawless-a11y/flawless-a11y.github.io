@@ -8,7 +8,7 @@
 <meta property="og:title" content="Prashant Chauhan — Backend Engineer" />
 <meta property="og:description" content="Distributed fintech systems at scale, and the LLM observability platform that keeps them honest." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B7A72'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='15' fill='%23fff'%3EPC%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23147A6E'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='15' fill='%23fff'%3EPC%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -20,15 +20,16 @@
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top">Prashant Chauhan</a>
-    <nav class="nav-links" aria-label="Sections">
-      <a href="#work">Work</a>
-      <a href="#experience" class="hide-sm">Experience</a>
-      <a href="#skills" class="hide-sm">Skills</a>
-      <a href="#contact">Contact</a>
-      <a href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top"><span class="mark">PC</span>Prashant Chauhan</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work" data-nav>Work</a>
+      <a href="#proof" data-nav class="hide-sm">Proof</a>
+      <a href="#experience" data-nav class="hide-sm">Experience</a>
+      <a href="#skills" data-nav class="hide-sm">Skills</a>
+      <a href="#contact" data-nav>Contact</a>
+      <a class="btn primary hide-sm" href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -39,67 +40,86 @@
 
 <main id="top">
 
+<!-- ============ HERO: the statement ============ -->
 <section class="hero wrap">
-  <div class="hero-grid">
-    <div>
-      <p class="status">Available · Bengaluru, India</p>
-      <h1>Prashant Chauhan</h1>
-      <p class="role">Backend engineer — distributed systems and LLM infrastructure</p>
-      <p class="thesis">
-        I build the systems fintech runs on, and the observability that keeps them honest. At Razorpay I run the
-        account-statements platform behind <strong>12–20 lakh bank statements a day at 99.9% uptime</strong>, and I built
-        the company's <strong>self-hosted LLM observability platform</strong> from proof-of-concept to production.
-        Most of my best work started as a question nobody assigned me.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6M4 21h16"/></svg>
-          Resume (PDF)
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/flawless-a11y" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="mailto:chnpr2318@gmail.com">Email</a>
-      </div>
+  <div class="statement">
+    <div class="statement-head">
+      <span>Account statement · Prashant Chauhan</span>
+      <span>Period · Jan 2022 — present</span>
+      <span class="live">Available · Bengaluru, India</span>
     </div>
 
-    <aside class="ledger" aria-label="Key figures">
-      <div class="ledger-head">
-        <span class="label">Figures · measured in production</span>
-        <span class="label">Razorpay</span>
+    <div class="statement-body">
+      <div>
+        <h1>Prashant<span class="l2">Chauhan</span></h1>
+        <p class="role">Backend engineer — distributed systems and LLM infrastructure</p>
+        <p class="thesis">
+          I build the systems fintech runs on, and the observability that keeps them honest. At Razorpay I run the
+          platform behind <strong>12–20 lakh bank statements a day at 99.9% uptime</strong>, and I built the company's
+          <strong>self-hosted LLM observability platform</strong> from proof-of-concept to production.
+          Most of my best work started as a question nobody assigned me.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6M4 21h16"/></svg>
+            Resume (PDF)
+          </a>
+          <a class="btn" href="mailto:chnpr2318@gmail.com">Email me</a>
+          <span class="quiet">
+            <a href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com/flawless-a11y" target="_blank" rel="noopener">GitHub ↗</a>
+          </span>
+        </div>
       </div>
-      <div class="ledger-row"><span>Bank statements processed, daily</span><span class="fig">12–20 lakh</span></div>
-      <div class="ledger-row"><span>Platform uptime</span><span class="fig">99.9%</span></div>
-      <div class="ledger-row"><span>Records migrated, zero downtime</span><span class="fig">37M+</span></div>
-      <div class="ledger-row"><span>Reconciliation rate</span><span class="fig">20% → 90%</span></div>
-      <div class="ledger-row"><span>Statement search latency</span><span class="fig">15 s → 0.5 s</span></div>
-      <div class="ledger-row"><span>AI products on the observability platform</span><span class="fig">~6</span></div>
-      <p class="ledger-foot">Units as used in Indian banking: 1 lakh = 100,000.</p>
-    </aside>
+
+      <aside class="ticker" aria-live="off">
+        <span class="label">Statements processed since you opened this page</span>
+        <span class="num" id="tick">0</span>
+        <p class="sub">Simulated at the real daily rate of the <b>account-statements platform I run at Razorpay</b> — 12 to 20 lakh statements a day across RBL, Yes Bank, IDFC, and Axis.</p>
+        <div class="rate"><span>rate</span><b>≈ 18.5 / second</b></div>
+      </aside>
+    </div>
+
+    <div class="figures" aria-label="Key figures">
+      <div><span class="fig">12–20 <small>lakh</small></span><span class="cap">statements a day</span></div>
+      <div><span class="fig">99.9<small>%</small></span><span class="cap">platform uptime</span></div>
+      <div><span class="fig">37M+</span><span class="cap">records migrated, zero downtime</span></div>
+      <div><span class="fig">20→90<small>%</small></span><span class="cap">reconciliation rate</span></div>
+      <div><span class="fig">15→0.5<small> s</small></span><span class="cap">statement search latency</span></div>
+      <div><span class="fig">~6</span><span class="cap">AI products on my observability platform</span></div>
+    </div>
   </div>
 </section>
 
+<!-- ============ WORK ============ -->
 <section class="section" id="work">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head rv">
       <span class="label">Selected work</span>
       <div>
         <h2>Shipped, measured, and still running.</h2>
-        <p class="lede">Each entry is a production system I owned or led at Razorpay — the problem it solved, what I did, and the number that changed.</p>
+        <p class="lede">Each entry is a production system I owned or led at Razorpay — the problem, what I did, and the number that changed. Hover a row; the figure is the point.</p>
       </div>
     </div>
 
     <div class="work-list">
 
-      <article class="work">
-        <div class="work-meta">
-          <span class="label">Owner · Live</span>
-          <span class="where">Razorpay · 2026</span>
-        </div>
+      <article class="work rv">
+        <div class="work-meta"><span class="label">Owner · Live</span><span class="where">Razorpay · 2026</span></div>
         <div>
           <h3>Self-hosted LLM observability platform</h3>
           <p class="desc">Razorpay's AI products had no visibility into what their LLM calls cost or whether output quality was drifting, and no one owned the problem.</p>
           <p class="desc">I ran the proof-of-concept, wrote the resource-planning and cost case, drove the architecture and cost approvals, and stood the platform up end-to-end on AWS EKS: Langfuse on ClickHouse, Terraform-managed RDS Multi-AZ, ElastiCache and S3, Helm and Spinnaker deploys, Grafana dashboards and alerting. Teams now get per-team cost attribution, LLM-as-a-Judge evaluations, and CI quality gates — at a fraction of the enterprise price.</p>
-          <p class="stack">Langfuse · ClickHouse · OpenTelemetry · AWS EKS · Terraform · Helm · Spinnaker · Grafana</p>
+          <div class="stack chips">
+            <span class="chip">Langfuse</span>
+            <span class="chip" data-logo="clickhouse">ClickHouse</span>
+            <span class="chip" data-logo="opentelemetry">OpenTelemetry</span>
+            <span class="chip" data-logo="amazonwebservices">AWS EKS</span>
+            <span class="chip" data-logo="terraform">Terraform</span>
+            <span class="chip" data-logo="helm">Helm</span>
+            <span class="chip" data-logo="spinnaker">Spinnaker</span>
+            <span class="chip" data-logo="grafana">Grafana</span>
+          </div>
         </div>
         <div class="work-figs">
           <div><span class="fig">~6</span><span class="cap">AI products observed</span></div>
@@ -107,16 +127,21 @@
         </div>
       </article>
 
-      <article class="work">
-        <div class="work-meta">
-          <span class="label">Internal SDK</span>
-          <span class="where">Razorpay · 2026</span>
-        </div>
+      <article class="work rv">
+        <div class="work-meta"><span class="label">Internal SDK</span><span class="where">Razorpay · 2026</span></div>
         <div>
           <h3>PII redaction SDK for LLM traces</h3>
           <p class="desc">Traces flowing into the observability platform could carry customer PII. Best-effort masking was the convenient answer; I chose the strict one.</p>
           <p class="desc">Built the SDK across five languages on Microsoft Presidio (NER plus regex recognizers), with defense in depth across four stages — client SDK, OpenTelemetry collector, server-side ingestion, and retroactive ClickHouse cleanup — and fail-closed semantics so an unmasked span is dropped rather than stored.</p>
-          <p class="stack">Go · Python · TypeScript · Ruby · Java · Presidio · OpenTelemetry</p>
+          <div class="stack chips">
+            <span class="chip" data-logo="go">Go</span>
+            <span class="chip" data-logo="python">Python</span>
+            <span class="chip" data-logo="typescript">TypeScript</span>
+            <span class="chip" data-logo="ruby">Ruby</span>
+            <span class="chip" data-logo="openjdk">Java</span>
+            <span class="chip">Presidio</span>
+            <span class="chip" data-logo="opentelemetry">OpenTelemetry</span>
+          </div>
         </div>
         <div class="work-figs">
           <div><span class="fig">5</span><span class="cap">languages, one SDK</span></div>
@@ -124,16 +149,20 @@
         </div>
       </article>
 
-      <article class="work">
-        <div class="work-meta">
-          <span class="label">Decomposition</span>
-          <span class="where">Razorpay · 2025</span>
-        </div>
+      <article class="work rv">
+        <div class="work-meta"><span class="label">Decomposition</span><span class="where">Razorpay · 2025</span></div>
         <div>
           <h3>Account Statements out of the monolith</h3>
           <p class="desc">Bank account statements lived inside a PHP monolith that everything else depended on. Pulling them out meant moving 37 million records without merchants noticing.</p>
           <p class="desc">Led the migration into a Go microservice: a phased migration worker with S3 ingestion and CSV fallback instead of temp tables and a downtime window, then a full cutover of statement-fetch traffic and read/write database segregation so reads never again contend with writes. The service now handles 12–20 lakh statements a day across RBL, Yes Bank, IDFC, and Axis.</p>
-          <p class="stack">Go · MySQL · Kafka (MSK) · S3 · Kubernetes · Airflow</p>
+          <div class="stack chips">
+            <span class="chip" data-logo="go">Go</span>
+            <span class="chip" data-logo="mysql">MySQL</span>
+            <span class="chip" data-logo="apachekafka">Kafka (MSK)</span>
+            <span class="chip" data-logo="amazonwebservices">S3</span>
+            <span class="chip" data-logo="kubernetes">Kubernetes</span>
+            <span class="chip" data-logo="apacheairflow">Airflow</span>
+          </div>
         </div>
         <div class="work-figs">
           <div><span class="fig">37M+</span><span class="cap">records, zero downtime</span></div>
@@ -141,16 +170,18 @@
         </div>
       </article>
 
-      <article class="work">
-        <div class="work-meta">
-          <span class="label">Search &amp; onboarding</span>
-          <span class="where">Razorpay · 2025</span>
-        </div>
+      <article class="work rv">
+        <div class="work-meta"><span class="label">Search &amp; onboarding</span><span class="where">Razorpay · 2025</span></div>
         <div>
           <h3>Elasticsearch-backed statement search</h3>
           <p class="desc">Statement search took around fifteen seconds and leaned on MySQL. The obvious fix — write to Elasticsearch synchronously in the request path — would have set worker CPU on fire.</p>
           <p class="desc">Did the load analysis first (1,480 requests a minute, 840 peak goroutines), then designed an asynchronous upsert pipeline and hybrid keyword-plus-fuzzy retrieval, and got architectural sign-off before rollout. The shared Elasticsearch infrastructure is now reused across multiple pods. Onboarded IDFC and Yes Bank onto the platform along the way, including statement-fetch workers and Airflow DAGs.</p>
-          <p class="stack">Elasticsearch · Go · Airflow · SFTP integrations</p>
+          <div class="stack chips">
+            <span class="chip" data-logo="elasticsearch">Elasticsearch</span>
+            <span class="chip" data-logo="go">Go</span>
+            <span class="chip" data-logo="apacheairflow">Airflow</span>
+            <span class="chip">SFTP integrations</span>
+          </div>
         </div>
         <div class="work-figs">
           <div><span class="fig">0.5<small> s</small></span><span class="cap">from ~15 s per search</span></div>
@@ -158,16 +189,19 @@
         </div>
       </article>
 
-      <article class="work">
-        <div class="work-meta">
-          <span class="label">End to end</span>
-          <span class="where">Razorpay · 2026</span>
-        </div>
+      <article class="work rv">
+        <div class="work-meta"><span class="label">End to end</span><span class="where">Razorpay · 2026</span></div>
         <div>
           <h3>TDS for Business Banking payouts</h3>
           <p class="desc">Tax deduction at source on payouts touches three core services that each talk to each other differently, across single, bulk, and API payout flows.</p>
           <p class="desc">Owned the technical design — two tech specs, stakeholder design reviews — and implemented it across eight repositories: TDS computation and LDC-certificate management in tax-compliance, synchronous calculation and asynchronous status propagation in payouts, PAN and category support in CFA, plus API-gateway onboarding through Terraform-managed Kong and Kubernetes manifests.</p>
-          <p class="stack">Go · SQS · Kong · Terraform · Kubernetes</p>
+          <div class="stack chips">
+            <span class="chip" data-logo="go">Go</span>
+            <span class="chip" data-logo="amazonwebservices">SQS</span>
+            <span class="chip" data-logo="kong">Kong</span>
+            <span class="chip" data-logo="terraform">Terraform</span>
+            <span class="chip" data-logo="kubernetes">Kubernetes</span>
+          </div>
         </div>
         <div class="work-figs">
           <div><span class="fig">8</span><span class="cap">repositories, one feature</span></div>
@@ -175,19 +209,22 @@
         </div>
       </article>
 
-      <article class="work">
-        <div class="work-meta">
-          <span class="label">Correctness</span>
-          <span class="where">Razorpay · 2025</span>
-        </div>
+      <article class="work rv">
+        <div class="work-meta"><span class="label">Correctness</span><span class="where">Razorpay · 2025</span></div>
         <div>
           <h3>Reconciliation overhaul across three banks</h3>
           <p class="desc">Only about a fifth of bank transactions were reconciling automatically for RBL, Yes Bank, and IDFC; the rest fell to the finance team.</p>
           <p class="desc">Redesigned the reconciliation rules, workspaces, and data-sourcing logic, and shipped a UTR-coalesce fix for statement gaps, coordinating rollout with the Recon and Finance teams. When a platform issue outside my team blocked delivery, I escalated it to the VP of Engineering to unblock the work.</p>
-          <p class="stack">Reporting pipeline · PHP · Scala · Python · Airflow</p>
+          <div class="stack chips">
+            <span class="chip">Reporting pipeline</span>
+            <span class="chip" data-logo="php">PHP</span>
+            <span class="chip" data-logo="scala">Scala</span>
+            <span class="chip" data-logo="python">Python</span>
+            <span class="chip" data-logo="apacheairflow">Airflow</span>
+          </div>
         </div>
         <div class="work-figs">
-          <div><span class="fig">20 → 90<small>%</small></span><span class="cap">reconciliation rate</span></div>
+          <div><span class="fig">20→90<small>%</small></span><span class="cap">reconciliation rate</span></div>
           <div><span class="fig">3</span><span class="cap">banks</span></div>
         </div>
       </article>
@@ -196,20 +233,72 @@
   </div>
 </section>
 
-<section class="section" id="experience">
+<!-- ============ PROOF: drawn to scale ============ -->
+<section class="section" id="proof">
   <div class="wrap">
-    <div class="section-head">
-      <span class="label">Experience</span>
+    <div class="section-head rv">
+      <span class="label">Proof, to scale</span>
       <div>
-        <h2>Four years in fintech backends.</h2>
+        <h2>Three numbers, drawn honestly.</h2>
+        <p class="lede">Not decorative charts — each one is the real figure at true proportion.</p>
       </div>
     </div>
 
-    <article class="xp">
-      <div class="when">Nov 2024 — present</div>
+    <div class="proofs">
+
+      <div class="proof rv" id="reconProof">
+        <span class="label">Reconciliation · RBL, Yes Bank, IDFC</span>
+        <h3>Bank entries matched to the ledger</h3>
+        <svg class="recon" id="recon" viewBox="0 0 300 168" role="img" aria-label="Ten bank entries on the left, ten ledger entries on the right; matched pairs are connected. Nine of ten now match, up from two."></svg>
+        <div class="big"><span id="reconPct">20</span><small>% matched automatically</small></div>
+        <p class="note">Redesigned rules, workspaces, and data-sourcing, plus a UTR-coalesce fix for statement gaps. Two in ten before; nine in ten after.</p>
+      </div>
+
+      <div class="proof rv">
+        <span class="label">Search latency · Account Statements</span>
+        <h3>One search, before and after</h3>
+        <div class="bars">
+          <div class="bar"><span>MySQL, before</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="val">~15 s</span></div>
+          <div class="bar"><span>Elasticsearch</span><div class="track"><div class="fill accent" style="--w:3.4%"></div></div><span class="val">0.5 s</span></div>
+        </div>
+        <div class="big">30<small>× faster, at true proportion</small></div>
+        <p class="note">Async upsert pipeline plus hybrid keyword-and-fuzzy retrieval, designed after a load analysis of 1,480 requests a minute and 840 peak goroutines. Worker CPU fell 45%.</p>
+      </div>
+
+      <div class="proof rv">
+        <span class="label">Availability · 12–20 lakh statements a day</span>
+        <h3>What 99.9% actually allows</h3>
+        <div class="dial">
+          <svg viewBox="0 0 88 88" aria-hidden="true">
+            <circle class="track" cx="44" cy="44" r="36"/>
+            <circle class="arc" cx="44" cy="44" r="36" transform="rotate(-90 44 44)"/>
+          </svg>
+          <div class="lines">
+            <span><b>99.9%</b> uptime across four banks</span>
+            <span><b>≈ 43 min</b> of downtime budget a month</span>
+            <span><b>≈ 8 h 46 min</b> a year — the entire allowance</span>
+          </div>
+        </div>
+        <p class="note">Kept there by read/write database segregation, a Kafka-to-MSK migration, 95%+ unit-test coverage, and on-call across five services.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="label">Experience</span>
+      <div><h2>Four years in fintech backends.</h2></div>
+    </div>
+
+    <article class="xp rv">
+      <div class="when">Nov 2024 — present<i>Bengaluru</i></div>
       <div>
         <h3>Software Development Engineer</h3>
-        <p class="org">Razorpay · Bengaluru</p>
+        <p class="org">Razorpay</p>
         <ul>
           <li>Own the Account Statements microservice and the LLM observability platform; on-call across five services.</li>
           <li>Drove reliability work: Kafka to MSK migration, Go 1.24 upgrade, multi-architecture images, 100% base-pod availability, 95%+ unit-test coverage.</li>
@@ -220,11 +309,11 @@
       </div>
     </article>
 
-    <article class="xp">
-      <div class="when">Jan 2022 — Nov 2024</div>
+    <article class="xp rv">
+      <div class="when">Jan 2022 — Nov 2024<i>Noida</i></div>
       <div>
         <h3>Software Engineer</h3>
-        <p class="org">Paytm Payments Bank · Noida</p>
+        <p class="org">Paytm Payments Bank</p>
         <ul>
           <li>Built the Order Management Service, a Java/Spring Boot microservice processing orders ~40% faster than the legacy system, powering AEPS, NCMC, fixed deposits, FASTag, core banking, cards, utility payments, and merchant payouts for millions of daily customers.</li>
           <li>Delivered event-driven dynamic pricing for the digital catalogue (time-to-market −50%) and an API layer automating back-office operations (deployment changes −50%, manual errors eliminated).</li>
@@ -234,34 +323,35 @@
       </div>
     </article>
 
-    <article class="xp">
-      <div class="when">Aug 2018 — Jun 2022</div>
+    <article class="xp rv">
+      <div class="when">Aug 2018 — Jun 2022<i>Bengaluru</i></div>
       <div>
         <h3>B.E., Electronics &amp; Telecommunication</h3>
-        <p class="org">Ramaiah Institute of Technology · Bengaluru · CGPA 8.89</p>
+        <p class="org">Ramaiah Institute of Technology · CGPA 8.89</p>
       </div>
     </article>
   </div>
 </section>
 
+<!-- ============ HOW I WORK ============ -->
 <section class="section" id="how">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head rv">
       <span class="label">How I work</span>
       <div><h2>Three habits behind the numbers.</h2></div>
     </div>
     <div class="how">
-      <div>
+      <div class="rv">
         <span class="label">Start from the question</span>
         <h3>Curiosity is the engine.</h3>
         <p>"Why can't we see what our LLMs cost?" became the observability platform. "Why does search take fifteen seconds?" became a load analysis and a new architecture. I follow the question across service boundaries and call that ownership, not scope creep.</p>
       </div>
-      <div>
+      <div class="rv">
         <span class="label">Own the outcome</span>
         <h3>Spec to on-call.</h3>
         <p>I write the tech spec, build it, roll it out, and carry the pager. When something outside my service breaks a merchant, I take the call and drive the root cause — the pager not being mine has never been a reason to wait.</p>
       </div>
-      <div>
+      <div class="rv">
         <span class="label">Prove it in production</span>
         <h3>Correctness over shortcuts.</h3>
         <p>Phased migrations over downtime windows, fail-closed over best-effort, 95% test coverage nobody asked for. If a system can't be observed and tested, I don't consider it shipped.</p>
@@ -270,31 +360,102 @@
   </div>
 </section>
 
+<!-- ============ SKILLS ============ -->
 <section class="section" id="skills">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head rv">
       <span class="label">Skills</span>
       <div><h2>Tools I use in production.</h2></div>
     </div>
     <div class="skills">
-      <div class="skill-row"><span class="label">Languages</span><p><b>Go</b>, <b>Java</b>, Python, TypeScript, Ruby, PHP, Scala, SQL</p></div>
-      <div class="skill-row"><span class="label">Backend &amp; data</span><p>gRPC, Protobuf, <b>Kafka</b>, REST, Spring Boot, microservices, event-driven architecture; <b>PostgreSQL</b>, <b>MySQL</b>, ClickHouse, Elasticsearch, Redis</p></div>
-      <div class="skill-row"><span class="label">Cloud &amp; infra</span><p><b>AWS</b> (EKS, EC2, S3, SQS, MSK, RDS, ElastiCache), <b>Kubernetes</b>, Docker, <b>Terraform</b>, Terragrunt, Helm, Spinnaker, Kong, Apache Airflow, CI/CD</p></div>
-      <div class="skill-row"><span class="label">Observability &amp; AI</span><p><b>Langfuse</b>, OpenTelemetry, Grafana, Prometheus, Uptrace, CloudWatch, Presidio, LiteLLM, MCP</p></div>
-      <div class="skill-row"><span class="label">Certifications</span><p>Google IT Automation with Python (Google) · Introduction to Cybersecurity Tools &amp; Cyber Attacks (IBM)</p></div>
+      <div class="skill-row rv"><span class="label">Languages</span>
+        <div class="chips">
+          <span class="chip core" data-logo="go">Go</span>
+          <span class="chip core" data-logo="openjdk">Java</span>
+          <span class="chip" data-logo="python">Python</span>
+          <span class="chip" data-logo="typescript">TypeScript</span>
+          <span class="chip" data-logo="ruby">Ruby</span>
+          <span class="chip" data-logo="php">PHP</span>
+          <span class="chip" data-logo="scala">Scala</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+      <div class="skill-row rv"><span class="label">Backend &amp; data</span>
+        <div class="chips">
+          <span class="chip core" data-logo="apachekafka">Kafka</span>
+          <span class="chip">gRPC</span>
+          <span class="chip">Protobuf</span>
+          <span class="chip">REST</span>
+          <span class="chip" data-logo="spring">Spring Boot</span>
+          <span class="chip">Microservices</span>
+          <span class="chip">Event-driven architecture</span>
+          <span class="chip core" data-logo="postgresql">PostgreSQL</span>
+          <span class="chip core" data-logo="mysql">MySQL</span>
+          <span class="chip" data-logo="clickhouse">ClickHouse</span>
+          <span class="chip" data-logo="elasticsearch">Elasticsearch</span>
+          <span class="chip" data-logo="redis">Redis</span>
+        </div>
+      </div>
+      <div class="skill-row rv"><span class="label">Cloud &amp; infra</span>
+        <div class="chips">
+          <span class="chip core" data-logo="amazonwebservices">AWS</span>
+          <span class="chip" data-logo="amazonwebservices">EKS</span>
+          <span class="chip" data-logo="amazonwebservices">EC2</span>
+          <span class="chip" data-logo="amazonwebservices">S3</span>
+          <span class="chip" data-logo="amazonwebservices">SQS</span>
+          <span class="chip" data-logo="amazonwebservices">MSK</span>
+          <span class="chip" data-logo="amazonwebservices">RDS</span>
+          <span class="chip" data-logo="amazonwebservices">ElastiCache</span>
+          <span class="chip core" data-logo="kubernetes">Kubernetes</span>
+          <span class="chip" data-logo="docker">Docker</span>
+          <span class="chip core" data-logo="terraform">Terraform</span>
+          <span class="chip">Terragrunt</span>
+          <span class="chip" data-logo="helm">Helm</span>
+          <span class="chip" data-logo="spinnaker">Spinnaker</span>
+          <span class="chip" data-logo="kong">Kong</span>
+          <span class="chip" data-logo="apacheairflow">Apache Airflow</span>
+          <span class="chip" data-logo="githubactions">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-row rv"><span class="label">Observability &amp; AI</span>
+        <div class="chips">
+          <span class="chip core">Langfuse</span>
+          <span class="chip" data-logo="opentelemetry">OpenTelemetry</span>
+          <span class="chip" data-logo="grafana">Grafana</span>
+          <span class="chip" data-logo="prometheus">Prometheus</span>
+          <span class="chip">Uptrace</span>
+          <span class="chip" data-logo="amazonwebservices">CloudWatch</span>
+          <span class="chip">Presidio</span>
+          <span class="chip">LiteLLM</span>
+          <span class="chip" data-logo="modelcontextprotocol">MCP</span>
+          <span class="chip" data-logo="claude">Claude Code</span>
+        </div>
+      </div>
+      <div class="skill-row rv"><span class="label">Certifications</span>
+        <div class="chips">
+          <span class="chip" data-logo="google">Google IT Automation with Python</span>
+          <span class="chip">Introduction to Cybersecurity Tools &amp; Cyber Attacks (IBM)</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section contact" id="contact">
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
   <div class="wrap">
-    <h2>Working on something at scale? Let's talk.</h2>
-    <p class="lede">Open to backend and platform roles — distributed systems, fintech infrastructure, and the LLM-infrastructure layer. Based in Bengaluru; comfortable remote.</p>
-    <div class="contact-links">
-      <a href="mailto:chnpr2318@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>chnpr2318@gmail.com</a>
-      <a href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>linkedin.com/in/pacifich</a>
-      <a href="https://github.com/flawless-a11y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-3 19.5c.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>github.com/flawless-a11y</a>
-      <a href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6M4 21h16"/></svg>Resume (PDF)</a>
+    <div class="contact-card rv">
+      <div>
+        <span class="label">Contact</span>
+        <h2>Working on something at scale? Let's talk.</h2>
+        <p class="lede">Open to backend and platform roles — distributed systems, fintech infrastructure, and the LLM-infrastructure layer. Based in Bengaluru; comfortable remote.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:chnpr2318@gmail.com"><span>chnpr2318@gmail.com</span><span>email</span></a>
+        <a href="https://www.linkedin.com/in/pacifich/" target="_blank" rel="noopener"><span>linkedin.com/in/pacifich</span><span>linkedin ↗</span></a>
+        <a href="https://github.com/flawless-a11y" target="_blank" rel="noopener"><span>github.com/flawless-a11y</span><span>github ↗</span></a>
+        <a href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener"><span>Resume</span><span>pdf ↗</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -302,19 +463,127 @@
 </main>
 
 <footer class="wrap">
-  <span>© <span id="yr"></span> Prashant Chauhan · Bengaluru</span>
+  <span>© <span id="yr"></span> Prashant Chauhan · Bengaluru · statement closes when you do</span>
   <span>Earlier experimental editions: <a href="cinematic.html">cinematic</a> · <a href="studio.html">studio</a> · <a href="fusion.html">fusion</a></span>
 </footer>
 
+<div class="actionbar" aria-label="Quick actions">
+  <a class="btn primary" href="Prashant_Chauhan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+  <a class="btn" href="mailto:chnpr2318@gmail.com">Email</a>
+</div>
+
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+(function () {
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- theme ---- */
+  function isDark() {
+    var t = document.documentElement.dataset.theme;
+    return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  }
   document.getElementById('themeBtn').addEventListener('click', function () {
-    var root = document.documentElement;
-    var current = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    var next = current === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
+    var next = isDark() ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
     try { localStorage.setItem('theme', next); } catch (e) {}
+    renderLogos();
   });
+
+  /* ---- technology logos (Simple Icons CDN). Brand colour by default; near-black marks get a light
+         tint in dark mode. A slug the CDN lacks falls back to text. ---- */
+  var DARK_BRANDS = { apachekafka: 1, openjdk: 1, opentelemetry: 1, kong: 1, elasticsearch: 1, helm: 1, modelcontextprotocol: 1 };
+  // Marks Simple Icons no longer carries (AWS was withdrawn at Amazon's request) come from Devicon instead.
+  var SRC_OVERRIDE = { amazonwebservices: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' };
+  var chips = document.querySelectorAll('[data-logo]');
+  function renderLogos() {
+    var dark = isDark();
+    chips.forEach(function (chip) {
+      var slug = chip.dataset.logo; if (!slug) return;
+      var img = chip.querySelector('img');
+      if (!img) {
+        img = new Image(); img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+        img.onerror = function () { img.remove(); chip.removeAttribute('data-logo'); };
+        chip.prepend(img);
+      }
+      img.src = SRC_OVERRIDE[slug] || ('https://cdn.simpleicons.org/' + slug + (dark && DARK_BRANDS[slug] ? '/E9EDEA' : ''));
+    });
+  }
+  renderLogos();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderLogos);
+
+  /* ---- live ticker: 16 lakh/day midpoint = 1,600,000 / 86,400 s ≈ 18.5 per second ---- */
+  var RATE = 1600000 / 86400;
+  var tick = document.getElementById('tick');
+  var t0 = performance.now();
+  var fmt = new Intl.NumberFormat('en-IN');
+  function step(now) {
+    tick.textContent = fmt.format(Math.floor((now - t0) / 1000 * RATE));
+    if (!document.hidden) requestAnimationFrame(step); else setTimeout(function () { requestAnimationFrame(step); }, 500);
+  }
+  requestAnimationFrame(step);
+
+  /* ---- reconciliation drawing: 10 bank entries, 10 ledger entries, matched pairs connected ---- */
+  var svg = document.getElementById('recon');
+  var NS = 'http://www.w3.org/2000/svg';
+  var ROWS = 10, rowH = 14, top = 18;
+  var order = [0, 5, 2, 8, 1, 7, 3, 9, 4, 6]; // order in which links appear after the first two
+  var links = [], banks = [], ledgers = [];
+  function el(name, attrs, text) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (text) n.textContent = text;
+    svg.appendChild(n); return n;
+  }
+  el('text', { x: 10, y: 9 }, 'BANK STATEMENT');
+  el('text', { x: 290, y: 9, 'text-anchor': 'end' }, 'LEDGER');
+  for (var i = 0; i < ROWS; i++) {
+    var y = top + i * rowH;
+    banks.push(el('rect', { class: 'bank', x: 10, y: y, width: 96, height: 9, rx: 1.5 }));
+    ledgers.push(el('rect', { class: 'ledger', x: 194, y: y, width: 96, height: 9, rx: 1.5 }));
+    links.push(el('line', { class: 'link', x1: 106, y1: y + 4.5, x2: 194, y2: y + 4.5 }));
+  }
+  var pct = document.getElementById('reconPct');
+  function setMatched(n) {
+    for (var i = 0; i < ROWS; i++) {
+      var on = order.indexOf(i) < n;
+      links[i].classList.toggle('on', on);
+      banks[i].classList.toggle('hit', on);
+      ledgers[i].classList.toggle('hit', on);
+    }
+    pct.textContent = n * 10;
+  }
+  setMatched(2);
+  var reconPlayed = false;
+  function playRecon() {
+    if (reconPlayed) return; reconPlayed = true;
+    if (reduced) { setMatched(9); return; }
+    var n = 2;
+    var iv = setInterval(function () { n++; setMatched(n); if (n >= 9) clearInterval(iv); }, 260);
+  }
+
+  /* ---- in-view: nudges .rv into place; triggers the drawn proofs once ---- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (e.target.id === 'reconProof') setTimeout(playRecon, 300);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.rv').forEach(function (n) { io.observe(n); });
+
+  /* ---- active nav ---- */
+  var navLinks = document.querySelectorAll('[data-nav]');
+  var sections = Array.prototype.map.call(navLinks, function (a) { return document.querySelector(a.getAttribute('href')); });
+  var nio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(function (a, i) { a.classList.toggle('active', sections[i] === e.target); });
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(function (s) { if (s) nio.observe(s); });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
